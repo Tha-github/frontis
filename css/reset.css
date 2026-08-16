@@ -1,0 +1,114 @@
+/* ===================================================================
+   RESET.CSS — Reset moderno
+   Frôntis Editorial
+   =================================================================== */
+
+/* Box-sizing consistente em todos os elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove margens e paddings padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Rolagem suave, exceto para quem prefere menos movimento */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Corpo ocupa a altura mínima da tela e evita scroll horizontal */
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Imagens e mídia sempre responsivas */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Formulários herdam a tipografia da página */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Botões sem estilo nativo do navegador */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Links sem sublinhado por padrão (definido conforme contexto) */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Listas sem marcadores por padrão (definido conforme contexto) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Textos longos quebram a linha corretamente */
+p,
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Elementos de tabela herdam espaçamento previsível */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Garante que o atributo hidden sempre esconda o elemento, mesmo quando
+   um componente define display:flex/grid na mesma classe (é o caso do
+   lightbox e do drawer mobile, que alternam a visibilidade via JS) */
+[hidden] {
+  display: none !important;
+}
+
+/* Foco visível para navegação por teclado (acessibilidade) */
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Respeita usuários que preferem menos animação/movimento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}

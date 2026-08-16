@@ -1,0 +1,19 @@
+<!-- PLACEHOLDER — substituir por foto/mockup real de livros diagramados -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="480" height="480" role="img" aria-labelledby="heroImgTitulo">
+  <title id="heroImgTitulo">Mockup de capas de livros diagramados</title>
+  <defs>
+    <filter id="sombraLivros" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#10243B" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <g filter="url(#sombraLivros)">
+    <rect x="120" y="60" width="170" height="240" rx="6" fill="#143A5E" transform="rotate(-8 205 180)"/>
+    <rect x="190" y="90" width="170" height="240" rx="6" fill="#1F7A4D" transform="rotate(7 275 210)"/>
+    <rect x="155" y="140" width="170" height="240" rx="6" fill="#FFFFFF" stroke="#DDE3E8" stroke-width="2"/>
+  </g>
+  <rect x="155" y="140" width="170" height="56" fill="#C0392B" opacity="0.08"/>
+  <g stroke="#DDE3E8" stroke-width="4" stroke-linecap="round">
+    <line x1="180" y1="180" x2="290" y2="180"/>
+    <line x1="180" y1="200" x2="270" y2="200"/>
+  </g>
+</svg>
