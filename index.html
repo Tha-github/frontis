@@ -91,8 +91,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#" class="header__marca" aria-label="Frôntis Editorial — página inicial">
-        <img src="assets/logo.svg" alt="Frôntis Editorial" class="header__logo" width="140" height="40">
-        <span class="header__assinatura">Editando livros desde 1993</span>
+        <img src="assets/logofrontis.jpg" alt="Frôntis Editorial" class="header__logo" width="140" height="40">
       </a>
 
       <nav class="header__nav" aria-label="Navegação principal">
@@ -159,7 +158,11 @@
           </ul>
         </div>
         <div class="hero__imagem">
-          <img src="assets/img/hero-livros.svg" alt="Mockup de capas de livros diagramados pela Frôntis Editorial" width="480" height="480">
+          <div class="hero__capas">
+            <img src="assets/img/hero-01.jpg" alt="Capa de livro diagramado pela Frôntis Editorial — exemplo 1" class="hero__capa hero__capa--1" width="200" height="292" loading="lazy">
+            <img src="assets/img/hero-02.jpg" alt="Capa de livro diagramado pela Frôntis Editorial — exemplo 2" class="hero__capa hero__capa--2" width="200" height="292" loading="lazy">
+            <img src="assets/img/hero-03.jpg" alt="Capa de livro diagramado pela Frôntis Editorial — exemplo 3" class="hero__capa hero__capa--3" width="200" height="292" loading="lazy">
+          </div>
         </div>
       </div>
     </section>
@@ -311,7 +314,6 @@
             <h3 class="produtos__titulo-categoria">Livros e e-books em geral</h3>
             <p class="produtos__descricao-categoria">Romances, biografias, poesia e demais obras autorais, prontos para publicação impressa ou digital.</p>
             <div class="produtos__capas">
-              <!-- TROCAR AQUI: substituir pelas 3 capas reais da categoria "Livros e e-books" -->
               <figure class="produtos__capa">
                 <button type="button" class="produtos__capa-botao" data-lightbox-grupo="livros" data-lightbox-src="assets/img/produtos/livros-01.jpg" data-lightbox-legenda="Livros e e-books em geral — exemplo 1" aria-label="Ampliar capa de exemplo — Livros e e-books em geral, imagem 1">
                   <img src="assets/img/produtos/livros-01.jpg" alt="Capa de exemplo — categoria Livros e e-books em geral" width="160" height="240" loading="lazy">
@@ -335,7 +337,6 @@
             <h3 class="produtos__titulo-categoria">Manuais técnicos</h3>
             <p class="produtos__descricao-categoria">Materiais de instrução e procedimentos, organizados para consulta rápida e leitura clara.</p>
             <div class="produtos__capas">
-              <!-- TROCAR AQUI: substituir pelas 3 capas reais da categoria "Manuais técnicos" -->
               <figure class="produtos__capa">
                 <button type="button" class="produtos__capa-botao" data-lightbox-grupo="manuais" data-lightbox-src="assets/img/produtos/manuais-01.jpg" data-lightbox-legenda="Manuais técnicos — exemplo 1" aria-label="Ampliar capa de exemplo — Manuais técnicos, imagem 1">
                   <img src="assets/img/produtos/manuais-01.jpg" alt="Capa de exemplo — categoria Manuais técnicos" width="160" height="240" loading="lazy">
@@ -359,7 +360,6 @@
             <h3 class="produtos__titulo-categoria">Anais de Congresso</h3>
             <p class="produtos__descricao-categoria">Coletâneas de trabalhos apresentados em eventos científicos, reunidas em uma única publicação.</p>
             <div class="produtos__capas">
-              <!-- TROCAR AQUI: substituir pelas 3 capas reais da categoria "Anais de Congresso" -->
               <figure class="produtos__capa">
                 <button type="button" class="produtos__capa-botao" data-lightbox-grupo="anais" data-lightbox-src="assets/img/produtos/anais-01.jpg" data-lightbox-legenda="Anais de Congresso — exemplo 1" aria-label="Ampliar capa de exemplo — Anais de Congresso, imagem 1">
                   <img src="assets/img/produtos/anais-01.jpg" alt="Capa de exemplo — categoria Anais de Congresso" width="160" height="240" loading="lazy">
@@ -383,7 +383,6 @@
             <h3 class="produtos__titulo-categoria">Revistas científicas</h3>
             <p class="produtos__descricao-categoria">Periódicos com artigos técnicos e acadêmicos, diagramados conforme o padrão da publicação.</p>
             <div class="produtos__capas">
-              <!-- TROCAR AQUI: substituir pelas 3 capas reais da categoria "Revistas científicas" -->
               <figure class="produtos__capa">
                 <button type="button" class="produtos__capa-botao" data-lightbox-grupo="revistas" data-lightbox-src="assets/img/produtos/revistas-01.jpg" data-lightbox-legenda="Revistas científicas — exemplo 1" aria-label="Ampliar capa de exemplo — Revistas científicas, imagem 1">
                   <img src="assets/img/produtos/revistas-01.jpg" alt="Capa de exemplo — categoria Revistas científicas" width="160" height="240" loading="lazy">
@@ -407,7 +406,6 @@
             <h3 class="produtos__titulo-categoria">Vade Mecum</h3>
             <p class="produtos__descricao-categoria">Compilações de referência para consulta constante, como coletâneas de normas e legislação.</p>
             <div class="produtos__capas">
-              <!-- TROCAR AQUI: substituir pelas 3 capas reais da categoria "Vade Mecum" -->
               <figure class="produtos__capa">
                 <button type="button" class="produtos__capa-botao" data-lightbox-grupo="vademecum" data-lightbox-src="assets/img/produtos/vademecum-01.jpg" data-lightbox-legenda="Vade Mecum — exemplo 1" aria-label="Ampliar capa de exemplo — Vade Mecum, imagem 1">
                   <img src="assets/img/produtos/vademecum-01.jpg" alt="Capa de exemplo — categoria Vade Mecum" width="160" height="240" loading="lazy">
@@ -429,7 +427,7 @@
       </div>
     </section>
 
-    <!-- 6. Livros à venda + Portfólio (links externos) -->
+    <!-- 6. Portfólio (links externos) -->
     <section class="portfolio section--clara" id="portfolio">
       <!-- A) Destaque de autoridade -->
       <div class="portfolio__destaque">
@@ -439,45 +437,6 @@
             <span class="portfolio__destaque-linha" aria-hidden="true"></span>
           </div>
           <p class="portfolio__destaque-texto">Mais de 500 Anais de congressos das sociedades de especialidades médicas publicados na Collectanea Symposium e oferecidos no dia do evento.</p>
-        </div>
-      </div>
-
-      <div class="container section portfolio__corpo">
-        <!-- B) Livros à venda -->
-        <div class="portfolio__bloco">
-          <h2 class="portfolio__titulo">Livros à venda</h2>
-          <p class="portfolio__apoio">Clique na capa e compre</p>
-
-          <div class="portfolio__capas" data-anim-grupo>
-            <!-- TROCAR AQUI: substituir pelas capas reais dos livros à venda -->
-            <a href="https://frontis.com.br/livros_a_venda.html" target="_blank" rel="noopener noreferrer" class="portfolio__capa anim-item" aria-label="Comprar: livro à venda, exemplo 1 (abre em nova aba)">
-              <img src="assets/img/portfolio/venda-01.jpg" alt="Capa de livro à venda — exemplo 1" width="160" height="240" loading="lazy">
-            </a>
-            <a href="https://frontis.com.br/livros_a_venda.html" target="_blank" rel="noopener noreferrer" class="portfolio__capa anim-item" aria-label="Comprar: livro à venda, exemplo 2 (abre em nova aba)">
-              <img src="assets/img/portfolio/venda-02.jpg" alt="Capa de livro à venda — exemplo 2" width="160" height="240" loading="lazy">
-            </a>
-            <a href="https://frontis.com.br/livros_a_venda.html" target="_blank" rel="noopener noreferrer" class="portfolio__capa anim-item" aria-label="Comprar: livro à venda, exemplo 3 (abre em nova aba)">
-              <img src="assets/img/portfolio/venda-03.jpg" alt="Capa de livro à venda — exemplo 3" width="160" height="240" loading="lazy">
-            </a>
-            <a href="https://frontis.com.br/livros_a_venda.html" target="_blank" rel="noopener noreferrer" class="portfolio__capa anim-item" aria-label="Comprar: livro à venda, exemplo 4 (abre em nova aba)">
-              <img src="assets/img/portfolio/venda-04.jpg" alt="Capa de livro à venda — exemplo 4" width="160" height="240" loading="lazy">
-            </a>
-            <a href="https://frontis.com.br/livros_a_venda.html" target="_blank" rel="noopener noreferrer" class="portfolio__capa anim-item" aria-label="Comprar: livro à venda, exemplo 5 (abre em nova aba)">
-              <img src="assets/img/portfolio/venda-05.jpg" alt="Capa de livro à venda — exemplo 5" width="160" height="240" loading="lazy">
-            </a>
-          </div>
-
-          <div class="portfolio__cta-bloco">
-            <a href="https://frontis.com.br/livros_a_venda.html" target="_blank" rel="noopener noreferrer" class="btn">Ver todos os livros à venda</a>
-          </div>
-        </div>
-
-        <!-- C) Portfólio de autores independentes -->
-        <div class="portfolio__bloco">
-          <h2 class="portfolio__titulo">Livros de autores independentes</h2>
-          <p class="portfolio__apoio">Confira exemplos de obras publicadas por autores independentes com a assessoria editorial da Frôntis.</p>
-          <!-- URL PENDENTE — o cliente vai informar o endereço da página de portfólio de autores independentes, que será mantida do site atual -->
-          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Conheça o portfólio</a>
         </div>
       </div>
     </section>
@@ -712,7 +671,6 @@
     <section class="editor section" id="editor">
       <div class="container editor__grid">
         <div class="editor__foto">
-          <!-- TROCAR AQUI: substituir pela foto real de Ricardo Sterchele -->
           <img src="assets/img/ricardo.jpg" alt="Retrato de Ricardo Sterchele, editor fundador da Frôntis Editorial" width="360" height="480" loading="lazy">
         </div>
 
@@ -853,9 +811,7 @@
     <!-- 10. Rodapé -->
     <div class="container rodape__grid">
       <div class="rodape__coluna rodape__coluna--marca">
-        <!-- TROCAR AQUI: substituir pela versão clara oficial do logotipo -->
-        <img src="assets/logo-clara.svg" alt="Frôntis Editorial" class="rodape__logo" width="140" height="40" loading="lazy">
-        <p class="rodape__assinatura">Editando livros desde 1993</p>
+        <img src="assets/logofooter.png" alt="Frôntis Editorial" class="rodape__logo" width="83" height="40" loading="lazy">
       </div>
 
       <nav class="rodape__coluna" aria-label="Navegação do rodapé">
@@ -870,15 +826,6 @@
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-
-      <div class="rodape__coluna">
-        <h3 class="rodape__titulo-coluna">Links úteis</h3>
-        <ul class="rodape__lista">
-          <li><a href="https://frontis.com.br/livros_a_venda.html" target="_blank" rel="noopener noreferrer">Livros à venda</a></li>
-          <!-- URL PENDENTE — mesmo endereço de portfólio da seção 6 (item C) -->
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Portfólio de autores independentes</a></li>
-        </ul>
-      </div>
 
       <div class="rodape__coluna">
         <h3 class="rodape__titulo-coluna">Contato</h3>

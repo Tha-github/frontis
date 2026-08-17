@@ -215,47 +215,6 @@ function initAnimacaoEscalonada() {
 }
 
 /**
- * Preenche progressivamente a linha vertical da seção de Processo
- * conforme o usuário rola a página. Fica totalmente desativado
- * quando o usuário prefere movimento reduzido.
- */
-function initProgressoProcesso() {
-  const linha = document.querySelector('.processo__linha-do-tempo');
-  if (!linha) return;
-
-  const prefereMovimentoReduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefereMovimentoReduzido) return;
-
-  let quadroAgendado = false;
-
-  function atualizarProgresso() {
-    quadroAgendado = false;
-
-    const retangulo = linha.getBoundingClientRect();
-    const alturaJanela = window.innerHeight;
-
-    // A linha começa a se preencher quando o topo entra na parte
-    // inferior da tela e termina quando o final dela passa do topo.
-    const pontoInicial = alturaJanela * 0.85;
-    const distanciaTotal = retangulo.height + pontoInicial - alturaJanela * 0.3;
-    const percorrido = pontoInicial - retangulo.top;
-    const progresso = Math.min(Math.max(percorrido / distanciaTotal, 0), 1);
-
-    linha.style.setProperty('--altura-preenchida', `${progresso * retangulo.height}px`);
-  }
-
-  function aoRolarOuRedimensionar() {
-    if (quadroAgendado) return;
-    quadroAgendado = true;
-    requestAnimationFrame(atualizarProgresso);
-  }
-
-  atualizarProgresso();
-  window.addEventListener('scroll', aoRolarOuRedimensionar, { passive: true });
-  window.addEventListener('resize', aoRolarOuRedimensionar);
-}
-
-/**
  * Quando uma imagem de capa (placeholder ainda não enviado pelo cliente)
  * falha ao carregar, esconde o ícone de imagem quebrada e mantém apenas
  * o fundo neutro do placeholder, para o layout continuar estável.
@@ -599,7 +558,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMenuMobile();
   initScrollSpy();
   initAnimacaoEscalonada();
-  initProgressoProcesso();
   initFallbackImagensCapas();
   initLightbox();
   initHistoriaExpandir();

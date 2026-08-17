@@ -507,9 +507,84 @@ ol li {
   justify-content: center;
 }
 
-.hero__imagem img {
-  max-width: 340px;
+.hero__capas {
+  position: relative;
   width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+}
+
+.hero__capa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: var(--raio-borda);
+  box-shadow: 4px 6px 14px rgba(16, 36, 59, 0.25);
+}
+
+.hero__capa--1 {
+  transform: translate(-68%, -55%) rotate(-8deg);
+  z-index: 1;
+}
+
+.hero__capa--2 {
+  transform: translate(-32%, -45%) rotate(7deg);
+  z-index: 2;
+}
+
+.hero__capa--3 {
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+@media (max-width: 899px) {
+  /* Reordena o banner no mobile: título, imagens, descrição e,
+     por último, os botões. O wrapper vira "display: contents" para
+     que seus filhos passem a ser itens diretos do grid do hero e
+     possam ser reordenados individualmente. Textos centralizados
+     (não alinhados à margem esquerda). */
+  #hero {
+    padding-block: var(--esp-4);
+  }
+
+  .hero__inner {
+    text-align: center;
+    gap: var(--esp-4);
+  }
+
+  .hero__conteudo {
+    display: contents;
+  }
+
+  .hero__titulo {
+    order: 1;
+  }
+
+  .hero__imagem {
+    order: 2;
+  }
+
+  .hero__capas {
+    max-width: 150px;
+  }
+
+  .hero__texto {
+    order: 3;
+    margin-top: 0;
+  }
+
+  .hero__ctas {
+    order: 4;
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  .hero__diferenciais {
+    display: none;
+  }
 }
 
 @media (min-width: 900px) {
@@ -528,7 +603,7 @@ ol li {
     justify-content: flex-start;
   }
 
-  .hero__imagem img {
+  .hero__capas {
     max-width: 100%;
   }
 }
@@ -553,6 +628,17 @@ ol li {
 
 .hero__imagem {
   animation: entrada-fade-slide 0.6s ease-out 0.15s both;
+}
+
+@media (max-width: 899px) {
+  /* .hero__conteudo vira "display: contents" nesta largura (ver seção
+     8), perdendo a caixa que a animação acima anima — aplica-se então
+     diretamente aos filhos. */
+  .hero__titulo,
+  .hero__texto,
+  .hero__ctas {
+    animation: entrada-fade-slide 0.6s ease-out both;
+  }
 }
 
 /* Estado inicial oculto dos itens com entrada escalonada via
@@ -634,6 +720,16 @@ ol li {
   font-size: var(--texto-16);
 }
 
+@media (max-width: 767px) {
+  #servicos {
+    text-align: center;
+  }
+
+  .card-servico {
+    align-items: center;
+  }
+}
+
 /* -------------------------------------------------------------------
    11. PROCESSO EDITORIAL
    ------------------------------------------------------------------- */
@@ -647,28 +743,6 @@ ol li {
   list-style: none;
   padding-left: 0;
   margin-top: var(--esp-6);
-}
-
-/* Linha de fundo (trilho) e linha de progresso, atualizada via JS
-   com a variável --altura-preenchida conforme o scroll */
-.processo__linha-do-tempo::before,
-.processo__linha-do-tempo::after {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: 31px;
-  width: 2px;
-  z-index: 0;
-}
-
-.processo__linha-do-tempo::before {
-  bottom: 4px;
-  background-color: var(--cinza-borda);
-}
-
-.processo__linha-do-tempo::after {
-  height: var(--altura-preenchida, 0px);
-  background-color: var(--verde);
 }
 
 .processo__etapa {
@@ -712,15 +786,26 @@ ol li {
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  #processo {
+    text-align: center;
+  }
+
+  .processo__etapa {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: var(--esp-2);
+  }
+
+  .processo__texto-etapa {
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 768px) {
   .processo__etapa {
     grid-template-columns: 88px 1fr;
     column-gap: var(--esp-4);
-  }
-
-  .processo__linha-do-tempo::before,
-  .processo__linha-do-tempo::after {
-    left: 43px;
   }
 
   .processo__numero {
@@ -769,6 +854,16 @@ ol li {
   display: grid;
   grid-template-columns: repeat(3, minmax(70px, 120px));
   gap: var(--esp-2);
+}
+
+@media (max-width: 767px) {
+  #produtos {
+    text-align: center;
+  }
+
+  .produtos__capas {
+    justify-content: center;
+  }
 }
 
 /* Miniatura de capa: proporção de livro (2:3), sombra suave à direita e
@@ -1099,6 +1194,21 @@ ol li {
   font-size: var(--texto-16);
 }
 
+@media (max-width: 767px) {
+  #artigos {
+    text-align: center;
+  }
+
+  .card-artigo {
+    align-items: center;
+  }
+
+  .card-artigo__cabecalho {
+    justify-content: center;
+    gap: var(--esp-2);
+  }
+}
+
 /* -------------------------------------------------------------------
    16. HISTÓRIA (linha do tempo institucional)
    ------------------------------------------------------------------- */
@@ -1107,20 +1217,6 @@ ol li {
   list-style: none;
   padding-left: 0;
   margin-top: var(--esp-6);
-}
-
-/* Trilho da linha do tempo: fixo em --verde, sem animação de scroll
-   (diferente da linha de Processo, que representa uma etapa em
-   andamento; aqui representa uma história já consolidada) */
-.historia__linha-do-tempo::before {
-  content: '';
-  position: absolute;
-  top: 4px;
-  bottom: 4px;
-  left: 31px;
-  width: 2px;
-  background-color: var(--verde);
-  z-index: 0;
 }
 
 .historia__marco {
@@ -1175,14 +1271,26 @@ ol li {
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  #sobre {
+    text-align: center;
+  }
+
+  .historia__marco {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: var(--esp-2);
+  }
+
+  .historia__texto {
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 768px) {
   .historia__marco {
     grid-template-columns: 88px 1fr;
     column-gap: var(--esp-4);
-  }
-
-  .historia__linha-do-tempo::before {
-    left: 43px;
   }
 
   .historia__ano {
@@ -1272,6 +1380,16 @@ ol li {
   color: var(--cinza-texto);
 }
 
+@media (max-width: 767px) {
+  #editor {
+    text-align: center;
+  }
+
+  .editor__credenciais {
+    justify-content: center;
+  }
+}
+
 /* -------------------------------------------------------------------
    18. CONTATO
    ------------------------------------------------------------------- */
@@ -1325,6 +1443,27 @@ ol li {
   border-radius: 50%;
   background-color: var(--branco);
   color: var(--verde);
+}
+
+/* Só o cabeçalho da seção e o texto intro centralizam no mobile — o
+   formulário em si permanece à esquerda, pois rótulos centralizados
+   acima de campos de largura total ficam desalinhados. Os canais
+   (WhatsApp/e-mail/telefone) ficam ocultos no mobile: o formulário
+   já cobre esse contato. */
+@media (max-width: 767px) {
+  #contato .olho,
+  #contato .titulo-secao,
+  .contato__intro {
+    text-align: center;
+  }
+
+  .contato__texto {
+    margin-inline: auto;
+  }
+
+  .contato__canais {
+    display: none;
+  }
 }
 
 .formulario-contato {
@@ -1438,7 +1577,7 @@ ol li {
 
 @media (min-width: 1024px) {
   .rodape__grid {
-    grid-template-columns: 1.2fr repeat(3, 1fr);
+    grid-template-columns: 1.2fr repeat(2, 1fr);
   }
 }
 
