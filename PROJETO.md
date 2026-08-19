@@ -302,6 +302,8 @@ suave, simulando volume de livro impresso.
       ficaram os dois marcados)
 - [ ] Confirmar se as imagens serão enviadas ou desenvolvidas (mesma
       duplicidade de marcação no formulário)
-- [ ] E-mail e telefone fixo para o rodapé
+- [x] E-mail — escritorio@frontis.com.br. Telefone em forma de texto usa o
+      mesmo número do WhatsApp (11) 94511-6620 — não há linha fixa separada
+      confirmada pelo cliente.
 - [ ] CNPJ e endereço, se quiser exibir
 - [ ] Dados de acesso FTP da UOL para publicação

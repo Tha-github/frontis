@@ -1074,75 +1074,148 @@ ol li {
   color: var(--cinza-texto);
 }
 
-.portfolio__capas {
+/* Grade dos 4 livros à venda: 2 colunas no mobile, os 4 lado a lado no desktop */
+.portfolio__livros-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: var(--esp-3);
-  max-width: 640px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--esp-4);
   margin-top: var(--esp-4);
 }
 
+@media (min-width: 768px) {
+  .portfolio__livros-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--esp-3);
+  }
+}
+
+/* Card de livro: capa + título + subtítulo + dois links, com os links
+   sempre alinhados na base do card (mesma altura entre cards) */
+.livro-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 /* Miniatura de capa: mesmo tratamento visual das capas de Produtos
-   (proporção 2:3, sombra suave, arredondamento só na borda externa) */
-.portfolio__capa {
+   (proporção 2:3, sombra suave). O fundo neutro (--cinza-borda) garante
+   espaço estável mesmo se a imagem ainda não tiver sido enviada. */
+.livro-card__capa {
   display: block;
+  width: 100%;
+  max-width: 160px;
+  margin-inline: auto;
   aspect-ratio: 2 / 3;
-  border-radius: 0 var(--raio-borda) var(--raio-borda) 0;
+  border-radius: var(--raio-borda);
   background-color: var(--cinza-borda);
   box-shadow: 4px 6px 14px rgba(16, 36, 59, 0.18);
   overflow: hidden;
-  transition: transform 0.2s ease;
 }
 
-.portfolio__capa:hover {
-  transform: translateY(-4px);
-}
-
-.portfolio__capa img {
+.livro-card__capa img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.portfolio__capa img.capa--erro {
+.livro-card__capa img.capa--erro {
   display: none;
 }
 
-/* Placeholder de capa sem imagem/link ainda enviados pelo cliente:
-   mantém a proporção e o fundo neutro do card, com um rótulo discreto
-   centralizado no lugar da arte da capa. */
-.portfolio__capa {
+/* Mesma largura da capa (160px), centralizado, para título, subtítulo e
+   links ficarem alinhados com a imagem acima em vez de esticar até a
+   borda da coluna do grid */
+.livro-card__corpo {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  max-width: 160px;
+  margin-inline: auto;
+  margin-top: var(--esp-2);
+  text-align: center;
 }
 
-.portfolio__capa-rotulo {
-  padding: 0 var(--esp-1);
-  text-align: center;
+/* Altura FIXA (não mínima) em exatamente 3 linhas — line-clamp corta com
+   reticências qualquer texto que não caiba (ex.: o título do Livro 1).
+   Com "height" travado em vez de "min-height", a caixa não pode crescer
+   nem encolher, então todo card tem a MESMA altura de texto sempre, e o
+   botão PDF cai exatamente na mesma linha nos 4 cards. */
+.livro-card__titulo {
   font-size: var(--texto-14);
+  font-family: var(--fonte-corpo);
+  font-weight: 700;
+  line-height: 1.3;
+  height: calc(1.3em * 3);
+  color: var(--azul-escuro);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.livro-card__subtitulo {
+  margin-top: 2px;
   color: var(--cinza-texto);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  height: calc(1.35em * 3);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Empurra os dois links para a base do card, independentemente da
+   quantidade de texto acima — mantém os cards alinhados na grade */
+.livro-card__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--esp-1);
+  margin-top: auto;
+  padding-top: var(--esp-2);
+}
+
+/* Altura FIXA (não mínima) nos dois botões e no espaçador — os três têm
+   exatamente 44px, então o bloco de links tem sempre o mesmo tamanho
+   total, tendo o card 1 ou 2 botões, e o PDF cai na mesma linha em
+   qualquer um dos 4 cards. */
+.livro-card__link-pdf {
+  width: 100%;
+  height: 44px;
+  padding-inline: var(--esp-2);
+  font-size: var(--texto-14);
+}
+
+/* Reserva o mesmo espaço do botão "Adquira o livro impresso" nos livros
+   que não têm esse botão. */
+.livro-card__link-espaco {
+  display: block;
+  visibility: hidden;
+  width: 100%;
+  height: 44px;
+}
+
+.livro-card__link-comprar {
+  width: 100%;
+  height: 44px;
+  padding-inline: var(--esp-2);
+  font-size: 0.75rem;
 }
 
 .portfolio__cta-bloco {
   margin-top: var(--esp-5);
 }
 
-/* Livros à venda + Portfólio lado a lado no desktop, empilhados no
-   mobile — mesmo peso visual, mesma altura de coluna. */
+/* Livros à venda e Portfólio empilhados, o Portfólio sempre abaixo dos
+   livros à venda — mesma largura em qualquer tamanho de tela. */
 .portfolio__colunas {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--esp-5);
   margin-top: var(--esp-6);
-}
-
-@media (min-width: 768px) {
-  .portfolio__colunas {
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-  }
 }
 
 .portfolio__coluna {
@@ -1160,6 +1233,12 @@ ol li {
 .portfolio__coluna .portfolio__cta-bloco {
   margin-top: auto;
   padding-top: var(--esp-4);
+}
+
+/* Bloco do Portfólio de autores independentes: texto e botão centralizados */
+.portfolio__coluna--centro {
+  align-items: center;
+  text-align: center;
 }
 
 /* -------------------------------------------------------------------

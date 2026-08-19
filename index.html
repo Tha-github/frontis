@@ -31,10 +31,11 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <!-- TROCAR AQUI: gerar favicon-32x32.png, favicon-16x16.png e apple-touch-icon.png a partir do logotipo oficial (ex.: via realfavicongenerator.net) -->
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
 
   <!-- Preconnect para otimizar carregamento das fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -440,52 +441,81 @@
         </div>
       </div>
 
-      <!-- B) Livros à venda + Portfólio de autores independentes, lado a
-           lado no desktop e empilhados no mobile. A compra acontece FORA
-           do site: cada capa é apenas um link para a plataforma externa
-           (Uiclap). Isto NÃO é uma loja virtual — sem carrinho, preço,
-           quantidade ou checkout. -->
+      <!-- B) Livros à venda, com o Portfólio de autores independentes logo
+           abaixo (empilhados em qualquer tamanho de tela). A compra
+           acontece FORA do site: cada capa é apenas um link para a
+           plataforma externa (Uiclap). Isto NÃO é uma loja virtual — sem
+           carrinho, preço, quantidade ou checkout. -->
       <div class="container">
         <div class="portfolio__colunas" data-anim-grupo>
           <div class="portfolio__coluna anim-item">
             <span class="olho">Adquira já</span>
             <h3 class="portfolio__titulo">Livros à venda</h3>
-            <p class="portfolio__apoio">Clique na capa e compre</p>
 
-            <div class="portfolio__capas">
-              <!-- LINK UICLAP PENDENTE — um por livro. Trocar href="#" pela
-                   URL de venda de cada título assim que o cliente informar. -->
-              <a href="#" class="portfolio__capa" data-livro="livro-01" aria-label="Comprar livro 1 na Uiclap (link pendente)">
-                <span class="portfolio__capa-rotulo" aria-hidden="true">Capa em breve</span>
-              </a>
-              <!-- LINK UICLAP PENDENTE — um por livro -->
-              <a href="#" class="portfolio__capa" data-livro="livro-02" aria-label="Comprar livro 2 na Uiclap (link pendente)">
-                <span class="portfolio__capa-rotulo" aria-hidden="true">Capa em breve</span>
-              </a>
-              <!-- LINK UICLAP PENDENTE — um por livro -->
-              <a href="#" class="portfolio__capa" data-livro="livro-03" aria-label="Comprar livro 3 na Uiclap (link pendente)">
-                <span class="portfolio__capa-rotulo" aria-hidden="true">Capa em breve</span>
-              </a>
-              <!-- LINK UICLAP PENDENTE — um por livro -->
-              <a href="#" class="portfolio__capa" data-livro="livro-04" aria-label="Comprar livro 4 na Uiclap (link pendente)">
-                <span class="portfolio__capa-rotulo" aria-hidden="true">Capa em breve</span>
-              </a>
-              <!-- LINK UICLAP PENDENTE — um por livro -->
-              <a href="#" class="portfolio__capa" data-livro="livro-05" aria-label="Comprar livro 5 na Uiclap (link pendente)">
-                <span class="portfolio__capa-rotulo" aria-hidden="true">Capa em breve</span>
-              </a>
-              <!-- LINK UICLAP PENDENTE — um por livro -->
-              <a href="#" class="portfolio__capa" data-livro="livro-06" aria-label="Comprar livro 6 na Uiclap (link pendente)">
-                <span class="portfolio__capa-rotulo" aria-hidden="true">Capa em breve</span>
-              </a>
-            </div>
+            <div class="portfolio__livros-grid" data-anim-grupo>
+              <!-- Livro 1 -->
+              <article class="livro-card anim-item">
+                <div class="livro-card__capa">
+                  <img src="assets/img/livros/copersucar-fittipaldi-2ed.png" alt="Capa do livro Copersucar-Fittipaldi: A história completa do F1 brasileiro" width="160" height="240" loading="lazy">
+                </div>
+                <div class="livro-card__corpo">
+                  <h4 class="livro-card__titulo">Copersucar-Fittipaldi: A história completa do F1 brasileiro</h4>
+                  <p class="livro-card__subtitulo">2ª edição 2020 · 404 páginas · preto e branco</p>
+                  <div class="livro-card__links">
+                    <a href="https://frontis.com.br/wa_files/Release_20Coper_Fitti_202ed_20portugues.pdf" class="btn btn--outline livro-card__link-pdf" target="_blank" rel="noopener noreferrer" aria-label="Baixar amostra em PDF do livro Copersucar-Fittipaldi: A história completa do F1 brasileiro, abre em nova aba">PDF</a>
+                    <span class="livro-card__link-espaco" aria-hidden="true"></span>
+                  </div>
+                </div>
+              </article>
 
-            <div class="portfolio__cta-bloco">
-              <a href="https://frontis.com.br/livros_a_venda.html" class="btn btn--outline" target="_blank" rel="noopener noreferrer" aria-label="Ver todos os livros à venda, abre em nova aba">Ver todos os livros à venda</a>
+              <!-- Livro 2 -->
+              <article class="livro-card anim-item">
+                <div class="livro-card__capa">
+                  <img src="assets/img/livros/copersucar-fittipaldi-3ed.png" alt="Capa do livro Copersucar-Fittipaldi: O fórmula-1 brasileiro" width="160" height="240" loading="lazy">
+                </div>
+                <div class="livro-card__corpo">
+                  <h4 class="livro-card__titulo">Copersucar-Fittipaldi: O fórmula-1 brasileiro</h4>
+                  <p class="livro-card__subtitulo">3ª edição 2021 · compacta e colorida · 92 páginas</p>
+                  <div class="livro-card__links">
+                    <a href="https://frontis.com.br/wa_files/COPER-FITTI_203_20ED_20Amostra.pdf" class="btn btn--outline livro-card__link-pdf" target="_blank" rel="noopener noreferrer" aria-label="Baixar amostra em PDF do livro Copersucar-Fittipaldi: O fórmula-1 brasileiro, abre em nova aba">PDF</a>
+                    <a href="https://loja.uiclap.com/titulo/ua8699/" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Adquira o livro impresso Copersucar-Fittipaldi: O fórmula-1 brasileiro na Uiclap, abre em nova aba">Adquira o livro impresso</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Livro 3 -->
+              <article class="livro-card anim-item">
+                <div class="livro-card__capa">
+                  <img src="assets/img/livros/transforme-seu-hobby.png" alt="Capa do livro Transforme seu hobby em NEGÓCIO próspero" width="160" height="240" loading="lazy">
+                </div>
+                <div class="livro-card__corpo">
+                  <h4 class="livro-card__titulo">Transforme seu hobby em NEGÓCIO próspero</h4>
+                  <p class="livro-card__subtitulo">1ª edição 2023 · 112 páginas</p>
+                  <div class="livro-card__links">
+                    <a href="https://frontis.com.br/wa_files/Tranforme_20seu_20hooby_20-_20AMOSTRA.pdf" class="btn btn--outline livro-card__link-pdf" target="_blank" rel="noopener noreferrer" aria-label="Baixar amostra em PDF do livro Transforme seu hobby em NEGÓCIO próspero, abre em nova aba">PDF</a>
+                    <span class="livro-card__link-espaco" aria-hidden="true"></span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Livro 4 -->
+              <article class="livro-card anim-item">
+                <div class="livro-card__capa">
+                  <img src="assets/img/livros/guia-do-autor-vol1.png" alt="Capa do livro Da criação à publicação: guia do autor — vol. 1 CRIAÇÃO" width="160" height="240" loading="lazy">
+                </div>
+                <div class="livro-card__corpo">
+                  <h4 class="livro-card__titulo">Da criação à publicação: guia do autor — vol. 1 CRIAÇÃO</h4>
+                  <p class="livro-card__subtitulo">1ª edição 2019 · 132 páginas</p>
+                  <div class="livro-card__links">
+                    <a href="https://frontis.com.br/wa_files/Guia_20do_20autor_20-_20apresenta_C3_A7_C3_A3o.pdf" class="btn btn--outline livro-card__link-pdf" target="_blank" rel="noopener noreferrer" aria-label="Baixar amostra em PDF do livro Da criação à publicação: guia do autor, vol. 1 CRIAÇÃO, abre em nova aba">PDF</a>
+                    <a href="https://loja.uiclap.com/titulo/ua127996" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Adquira o livro impresso Da criação à publicação: guia do autor, vol. 1 CRIAÇÃO na Uiclap, abre em nova aba">Adquira o livro impresso</a>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
 
-          <div class="portfolio__coluna anim-item">
+          <div class="portfolio__coluna portfolio__coluna--centro anim-item">
             <span class="olho">Quem já publicou</span>
             <h3 class="portfolio__titulo">Portfólio de autores independentes</h3>
             <p class="portfolio__apoio">Conheça obras de autores independentes já editadas e diagramadas pela Frôntis Editorial.</p>
@@ -790,25 +820,23 @@
                 <span>WhatsApp</span>
               </a>
 
-              <!-- TROCAR AQUI: e-mail definitivo do cliente -->
-              <a href="mailto:contato@frontis.com.br" class="contato__canal">
+              <a href="mailto:escritorio@frontis.com.br" class="contato__canal">
                 <span class="contato__canal-icone">
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                     <rect x="3" y="5" width="18" height="14" rx="2"/>
                     <path d="M3 7l9 6 9-6"/>
                   </svg>
                 </span>
-                <span>contato@frontis.com.br</span>
+                <span>escritorio@frontis.com.br</span>
               </a>
 
-              <!-- TROCAR AQUI: telefone fixo definitivo do cliente -->
-              <a href="tel:+551130000000" class="contato__canal">
+              <a href="tel:+5511945116620" class="contato__canal">
                 <span class="contato__canal-icone">
                   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                     <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z"/>
                   </svg>
                 </span>
-                <span>(11) 3000-0000</span>
+                <span>(11) 94511-6620</span>
               </a>
             </div>
           </div>
@@ -894,10 +922,8 @@
         <h3 class="rodape__titulo-coluna">Contato</h3>
         <ul class="rodape__lista">
           <li><a href="#" data-whatsapp>WhatsApp</a></li>
-          <!-- TROCAR AQUI: e-mail definitivo do cliente -->
-          <li><a href="mailto:contato@frontis.com.br">contato@frontis.com.br</a></li>
-          <!-- TROCAR AQUI: telefone fixo definitivo do cliente -->
-          <li><a href="tel:+551130000000">(11) 3000-0000</a></li>
+          <li><a href="mailto:escritorio@frontis.com.br">escritorio@frontis.com.br</a></li>
+          <li><a href="tel:+5511945116620">(11) 94511-6620</a></li>
         </ul>
       </div>
     </div>

@@ -218,10 +218,10 @@ function initAnimacaoEscalonada() {
  * Quando uma imagem de capa (placeholder ainda não enviado pelo cliente)
  * falha ao carregar, esconde o ícone de imagem quebrada e mantém apenas
  * o fundo neutro do placeholder, para o layout continuar estável.
- * Cobre as capas de Produtos e as do Portfólio (livros à venda).
+ * Cobre as capas de Produtos e as dos livros à venda (Portfólio).
  */
 function initFallbackImagensCapas() {
-  document.querySelectorAll('.produtos__capa-botao img, .portfolio__capa img, .editor__foto img').forEach((img) => {
+  document.querySelectorAll('.produtos__capa-botao img, .livro-card__capa img, .editor__foto img').forEach((img) => {
     img.addEventListener(
       'error',
       () => {
