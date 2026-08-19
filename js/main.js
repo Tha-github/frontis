@@ -4,8 +4,8 @@
    =================================================================== */
 
 // Número de WhatsApp para onde os leads são direcionados.
-// TROCAR AQUI quando o cliente informar o número definitivo (com DDD).
-const WHATSAPP_NUMBER = '5511999999999';
+// Número real confirmado pelo cliente (mesmo número usado no contato com a agência).
+const WHATSAPP_NUMBER = '5511945116620';
 
 // Mensagem padrão usada pelos botões genéricos de CTA (header, hero etc.).
 const MENSAGEM_PADRAO_WHATSAPP = 'Olá! Vim pelo site da Frôntis Editorial e gostaria de saber mais sobre a edição do meu livro.';

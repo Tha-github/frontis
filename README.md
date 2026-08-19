@@ -43,17 +43,18 @@ ou seguir a lista abaixo.
 
 ### 1. Número do WhatsApp
 
-**Arquivo:** [`js/main.js`](js/main.js), linha 8.
+**Arquivo:** [`js/main.js`](js/main.js), linha 8. Já configurado com o
+número real confirmado pelo cliente:
 
 ```js
-const WHATSAPP_NUMBER = '5511999999999';
+const WHATSAPP_NUMBER = '5511945116620';
 ```
 
-Troque pelo número real, sempre **só dígitos**, no formato
-`55` + DDD + número (sem espaços, parênteses, traços ou o símbolo `+`).
-Essa é a única linha do projeto inteiro que define o número — todos os
-botões de WhatsApp do site (header, hero, processo, produtos, contato,
-rodapé e o botão flutuante) usam essa mesma constante automaticamente.
+Formato sempre **só dígitos**: `55` + DDD + número (sem espaços,
+parênteses, traços ou o símbolo `+`). Essa é a única linha do projeto
+inteiro que define o número — todos os botões de WhatsApp do site
+(header, hero, processo, produtos, contato, rodapé e o botão
+flutuante) usam essa mesma constante automaticamente.
 
 ### 2. Logotipo
 

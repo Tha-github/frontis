@@ -1,0 +1,27 @@
+PASTA /assets/pdf/ — AGUARDANDO OS ARQUIVOS REAIS DO CLIENTE
+==============================================================
+
+O HTML já foi atualizado (Item 2 da rodada de ajustes) para apontar para
+os caminhos relativos abaixo, mas os arquivos binários NÃO foram
+recebidos nesta sessão de trabalho — apenas os nomes/títulos constavam
+no PROJETO.md. Assim que o cliente enviar os 8 PDFs, salve-os EXATAMENTE
+com estes nomes nesta pasta (sem espaços, sem acentos, minúsculas):
+
+01-estrutura-do-livro.pdf
+02-diagramacao-do-livro.pdf
+03-formatos-comuns-de-livros.pdf
+04-legibilidade.pdf
+05-normas-edicao-de-texto.pdf
+06-recomendacoes-para-redacao.pdf
+07-isbn-e-ficha-catalografica.pdf
+08-sobre-direitos-autorais.pdf
+
+Falta ainda um 9º artigo, "Bibliografia — Normas ABNT", que o cliente
+não enviou. O card correspondente está no index.html, porém comentado
+(dentro da seção #artigos), com a observação "PDF PENDENTE — solicitar
+ao cliente". Quando o arquivo chegar, salve-o aqui (sugestão de nome:
+09-bibliografia-normas-abnt.pdf) e descomente o card no HTML.
+
+Depois de colocar os PDFs reais aqui, apague este arquivo
+LEIA-ME-PENDENTE.txt — ele existe apenas para a pasta não ficar vazia
+no controle de versão e para documentar a pendência.

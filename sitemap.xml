@@ -10,7 +10,32 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <!-- PENDENTE: incluir aqui a URL da página de portfólio de autores
-       independentes assim que o cliente informar o endereço (ver
-       pendências no PROJETO.md, seção 14) -->
+  <!-- Páginas antigas preservadas no mesmo domínio (ver DEPLOY.md e
+       item 5 da rodada de ajustes) — continuam no ar e precisam seguir
+       indexadas. -->
+  <url>
+    <loc>https://www.frontis.com.br/livros_de_autores_4.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.frontis.com.br/livros_de_autores2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.frontis.com.br/livros_de_autores1.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.frontis.com.br/portfolio_edicoes_institucionais.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.frontis.com.br/portfolio_meus_livros.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

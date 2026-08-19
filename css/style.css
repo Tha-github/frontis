@@ -1109,8 +1109,57 @@ ol li {
   display: none;
 }
 
+/* Placeholder de capa sem imagem/link ainda enviados pelo cliente:
+   mantém a proporção e o fundo neutro do card, com um rótulo discreto
+   centralizado no lugar da arte da capa. */
+.portfolio__capa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio__capa-rotulo {
+  padding: 0 var(--esp-1);
+  text-align: center;
+  font-size: var(--texto-14);
+  color: var(--cinza-texto);
+}
+
 .portfolio__cta-bloco {
   margin-top: var(--esp-5);
+}
+
+/* Livros à venda + Portfólio lado a lado no desktop, empilhados no
+   mobile — mesmo peso visual, mesma altura de coluna. */
+.portfolio__colunas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--esp-5);
+  margin-top: var(--esp-6);
+}
+
+@media (min-width: 768px) {
+  .portfolio__colunas {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+.portfolio__coluna {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--esp-4);
+  background-color: var(--branco);
+  border: 1px solid var(--cinza-borda);
+  border-radius: var(--raio-borda);
+}
+
+/* Empurra o botão de cada coluna para a base, independentemente da
+   quantidade de conteúdo acima — mantém os dois CTAs alinhados. */
+.portfolio__coluna .portfolio__cta-bloco {
+  margin-top: auto;
+  padding-top: var(--esp-4);
 }
 
 /* -------------------------------------------------------------------

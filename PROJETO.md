@@ -289,12 +289,12 @@ suave, simulando volume de livro impresso.
 - Redes sociais: **nenhuma**. O cliente informou "sem link". Não criar
   ícones sociais em lugar algum do site.
 - Google Maps: **não incluir**. O cliente respondeu "não".
-- WhatsApp: número a definir — constante `WHATSAPP_NUMBER` em `js/main.js`
+- WhatsApp: número confirmado (5511945116620) — constante `WHATSAPP_NUMBER` em `js/main.js`
 - Formulário: sem backend. Monta a mensagem e abre `https://wa.me/...`
 
 ## 14. Pendências com o cliente
 
-- [ ] Número do WhatsApp com DDD
+- [x] Número do WhatsApp com DDD — 5511945116620
 - [ ] Arquivo do logotipo (para extrair o verde exato)
 - [ ] Fotos e capas de livros para as categorias de produtos
 - [ ] URL da página de portfólio de autores independentes
