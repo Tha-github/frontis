@@ -839,34 +839,6 @@ ol li {
 /* -------------------------------------------------------------------
    11. PROCESSO EDITORIAL
    ------------------------------------------------------------------- */
-/* Marca d'água discreta do logo, como elemento de fundo (item 1.5).
-   Realocada para esta seção porque a faixa dos "500 Anais" (destino
-   original sugerido) foi removida — ver item 5 da rodada de ajustes. */
-#processo {
-  position: relative;
-  overflow: hidden;
-}
-
-#processo::before {
-  content: '';
-  position: absolute;
-  right: -60px;
-  bottom: -60px;
-  width: 380px;
-  height: 380px;
-  background-image: url('../assets/favicon.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  opacity: 0.06;
-  pointer-events: none;
-  z-index: 0;
-}
-
-#processo > .container {
-  position: relative;
-  z-index: 1;
-}
-
 .processo__intro {
   margin-top: var(--esp-2);
   color: var(--azul-escuro);
