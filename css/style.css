@@ -53,15 +53,16 @@
   --sombra-suave: 0 4px 16px rgba(16, 36, 59, 0.08);
   --largura-maxima-container: 1180px;
   --largura-maxima-leitura: 68ch;
-  --header-height: 88px;
+  --header-height: 96px; /* aumentado para acomodar o logo de 64px */
+  --topbar-height: 40px;
 }
 
 /* -------------------------------------------------------------------
    2. ESTILOS BASE
    ------------------------------------------------------------------- */
 html {
-  /* Compensa a altura do header fixo ao rolar até uma âncora */
-  scroll-padding-top: var(--header-height);
+  /* Compensa a altura da topbar + header fixos ao rolar até uma âncora */
+  scroll-padding-top: calc(var(--topbar-height) + var(--header-height));
 }
 
 body {
@@ -70,7 +71,7 @@ body {
   line-height: 1.75;
   color: var(--azul-escuro);
   background-color: var(--branco);
-  padding-top: var(--header-height); /* espaço para o header fixo */
+  padding-top: calc(var(--topbar-height) + var(--header-height)); /* espaço para a topbar + o header fixos */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -158,6 +159,13 @@ ol li {
   margin-bottom: var(--esp-3);
 }
 
+/* Destaque tipográfico discreto do nome "Frôntis" dentro de textos
+   corridos já existentes, para reforçar a marca sem criar frases novas */
+.nome-marca {
+  font-weight: 600;
+  color: var(--verde);
+}
+
 /* -------------------------------------------------------------------
    5. BOTÕES
    ------------------------------------------------------------------- */
@@ -220,17 +228,89 @@ ol li {
 }
 
 /* -------------------------------------------------------------------
+   5.2 TOPBAR (barra fina de contato, acima do header)
+   ------------------------------------------------------------------- */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  background-color: var(--azul-marinho);
+  color: var(--branco);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-3);
+  width: 100%;
+}
+
+/* Espaço reservado para o telefone fixo, à esquerda — vazio até o
+   cliente confirmar se há uma linha fixa (ver PROJETO.md, seção 14) */
+.topbar__telefone {
+  font-size: 13px;
+  color: var(--branco);
+  opacity: 0.85;
+}
+
+.topbar__telefone:empty {
+  display: none;
+}
+
+.topbar__email {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--branco);
+}
+
+.topbar__email:hover {
+  color: var(--verde-claro);
+}
+
+.topbar__email svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 899.98px) {
+  :root {
+    --topbar-height: 32px;
+  }
+
+  .topbar__inner {
+    justify-content: center;
+  }
+
+  .topbar__telefone {
+    display: none;
+  }
+
+  .topbar__email {
+    font-size: 13px;
+  }
+}
+
+/* -------------------------------------------------------------------
    6. HEADER
    ------------------------------------------------------------------- */
 .header {
   position: fixed;
-  top: 0;
+  top: var(--topbar-height);
   left: 0;
   right: 0;
   z-index: 1000;
   background-color: var(--branco);
   box-shadow: 0 0 0 rgba(16, 36, 59, 0);
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, top 0.2s ease;
 }
 
 .header.scrolled {
@@ -245,17 +325,34 @@ ol li {
   min-height: var(--header-height);
 }
 
+/* Logo + nome da marca lado a lado, lendo como uma assinatura única
+   em vez de um ícone solto (pedido do cliente: "o nome precisa
+   aparecer mais, para fixar a marca") */
 .header__marca {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--esp-2);
   flex-shrink: 0;
 }
 
 .header__logo {
   width: auto;
-  height: 40px;
+  height: 64px;
+}
+
+.header__marca-texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.header__nome {
+  font-family: var(--fonte-titulos);
+  font-weight: 700;
+  font-size: var(--texto-18);
+  color: var(--azul-marinho);
+  white-space: nowrap;
 }
 
 .header__assinatura {
@@ -266,6 +363,22 @@ ol li {
   text-transform: uppercase;
   color: var(--verde);
   white-space: nowrap;
+}
+
+@media (max-width: 899.98px) {
+  .header__logo {
+    height: 48px;
+  }
+
+  .header__nome {
+    font-size: var(--texto-16);
+    white-space: normal;
+  }
+
+  .header__assinatura {
+    font-size: 9px;
+    white-space: normal;
+  }
 }
 
 .header__nav {
@@ -354,6 +467,10 @@ ol li {
 }
 
 @media (max-width: 899.98px) {
+  :root {
+    --header-height: 80px;
+  }
+
   .header__nav,
   .header__cta {
     display: none;
@@ -518,26 +635,38 @@ ol li {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 56%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: var(--raio-borda);
-  box-shadow: 4px 6px 14px rgba(16, 36, 59, 0.25);
+}
+
+/* Capas ao fundo: menores, rotacionadas e com opacidade reduzida, para
+   dar profundidade à composição sem competir com o livro em destaque */
+.hero__capa--1,
+.hero__capa--2 {
+  width: 44%;
+  opacity: 0.55;
+  box-shadow: 2px 4px 10px rgba(16, 36, 59, 0.15);
 }
 
 .hero__capa--1 {
-  transform: translate(-68%, -55%) rotate(-8deg);
+  transform: translate(-82%, -58%) rotate(-10deg);
   z-index: 1;
 }
 
 .hero__capa--2 {
-  transform: translate(-32%, -45%) rotate(7deg);
+  transform: translate(-18%, -42%) rotate(9deg);
   z-index: 2;
 }
 
+/* Capa em primeiro plano — o livro "Garriado", indicado pelo cliente
+   como o mais chamativo. Maior, centralizada, com sombra suave à
+   direita e abaixo simulando volume de livro impresso. */
 .hero__capa--3 {
+  width: 64%;
   transform: translate(-50%, -50%);
   z-index: 3;
+  box-shadow: 8px 10px 24px rgba(16, 36, 59, 0.32);
 }
 
 @media (max-width: 899px) {
@@ -567,8 +696,24 @@ ol li {
     order: 2;
   }
 
+  /* No mobile, só a capa em destaque (Garriado) aparece, centralizada */
   .hero__capas {
-    max-width: 150px;
+    position: static;
+    max-width: 220px;
+    aspect-ratio: auto;
+    margin-inline: auto;
+  }
+
+  .hero__capa--1,
+  .hero__capa--2 {
+    display: none;
+  }
+
+  .hero__capa--3 {
+    position: static;
+    width: 100%;
+    transform: none;
+    box-shadow: 6px 8px 20px rgba(16, 36, 59, 0.28);
   }
 
   .hero__texto {
@@ -733,6 +878,34 @@ ol li {
 /* -------------------------------------------------------------------
    11. PROCESSO EDITORIAL
    ------------------------------------------------------------------- */
+/* Marca d'água discreta do logo, como elemento de fundo (item 1.5).
+   Realocada para esta seção porque a faixa dos "500 Anais" (destino
+   original sugerido) foi removida — ver item 5 da rodada de ajustes. */
+#processo {
+  position: relative;
+  overflow: hidden;
+}
+
+#processo::before {
+  content: '';
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  width: 380px;
+  height: 380px;
+  background-image: url('../assets/favicon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#processo > .container {
+  position: relative;
+  z-index: 1;
+}
+
 .processo__intro {
   margin-top: var(--esp-2);
   color: var(--azul-escuro);
@@ -993,71 +1166,11 @@ ol li {
 /* -------------------------------------------------------------------
    14. PORTFÓLIO (livros à venda + autores independentes)
    ------------------------------------------------------------------- */
-.portfolio__destaque {
-  background-color: var(--azul-marinho);
-  color: var(--branco);
-  padding-block: var(--esp-6);
-}
-
-@media (min-width: 768px) {
-  .portfolio__destaque {
-    padding-block: var(--esp-7);
-  }
-}
-
-.portfolio__destaque-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--esp-3);
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .portfolio__destaque-inner {
-    flex-direction: row;
-    align-items: center;
-    text-align: left;
-    gap: var(--esp-5);
-  }
-}
-
-.portfolio__destaque-numero-bloco {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-  .portfolio__destaque-numero-bloco {
-    align-items: flex-start;
-  }
-}
-
-.portfolio__destaque-numero {
-  font-family: var(--fonte-titulos);
-  font-size: clamp(3rem, 5vw + 1.5rem, 4.5rem);
-  font-weight: 700;
-  line-height: 1;
-  color: var(--branco);
-}
-
-.portfolio__destaque-linha {
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin-top: var(--esp-2);
-  border-radius: 2px;
-  background-color: var(--verde);
-}
-
-.portfolio__destaque-texto {
-  margin: 0;
-  color: var(--branco);
-  font-size: var(--texto-20);
-  max-width: 46ch;
-}
+/* A faixa de destaque em --azul-marinho com os "500+ Anais" foi
+   removida a pedido do cliente (ver PROJETO.md/rodada de ajustes,
+   item 5). A seção agora recebe padding próprio via .section, como
+   as demais, e ganhou um título de seção (olho + h2) para não ficar
+   sem cabeçalho depois da remoção da faixa. */
 
 .portfolio__bloco + .portfolio__bloco {
   margin-top: var(--esp-7);
@@ -1074,17 +1187,26 @@ ol li {
   color: var(--cinza-texto);
 }
 
-/* Grade dos 4 livros à venda: 2 colunas no mobile, os 4 lado a lado no desktop */
+/* Grade dos 7 livros à venda: 1 coluna no mobile, 2 no tablet, 3 no
+   desktop. O Grid não centraliza a última linha incompleta por padrão
+   (sem justify-content), então o card sobrando (7 não é múltiplo de 3)
+   fica alinhado à esquerda naturalmente. */
 .portfolio__livros-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--esp-4);
   margin-top: var(--esp-4);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .portfolio__livros-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio__livros-grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--esp-3);
   }
 }
@@ -1340,6 +1462,21 @@ ol li {
 /* -------------------------------------------------------------------
    16. HISTÓRIA (linha do tempo institucional)
    ------------------------------------------------------------------- */
+/* Imagem explicativa sobre o que é a Frôntis (conteúdo do documento
+   Word enviado pelo cliente) */
+.sobre__imagem-explicativa {
+  max-width: 900px;
+  margin: var(--esp-5) auto 0;
+}
+
+.sobre__imagem-explicativa img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cinza-borda);
+}
+
 .historia__linha-do-tempo {
   position: relative;
   list-style: none;
@@ -1723,7 +1860,7 @@ ol li {
 }
 
 .rodape__logo {
-  height: 40px;
+  height: 72px;
   width: auto;
 }
 

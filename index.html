@@ -89,10 +89,33 @@
 
   <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
+  <!-- Topbar de contato: e-mail visível logo na abertura do site,
+       pedido do cliente. Fica fixa junto com o header ao rolar (não
+       some) para o e-mail continuar acessível em qualquer ponto da
+       página — decisão de manter simples e sempre visível, sem JS
+       extra para esconder/mostrar ao rolar. -->
+  <div class="topbar" id="topbar">
+    <div class="container topbar__inner">
+      <!-- TROCAR AQUI: telefone fixo — inserir aqui quando/se o cliente confirmar uma linha fixa (ver PROJETO.md, seção 14). Por ora, o espaço fica reservado e vazio. -->
+      <span class="topbar__telefone" aria-hidden="true"></span>
+      <a href="mailto:escritorio@frontis.com.br" class="topbar__email" aria-label="Enviar e-mail para escritorio@frontis.com.br">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+        <span>escritorio@frontis.com.br</span>
+      </a>
+    </div>
+  </div>
+
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#" class="header__marca" aria-label="Frôntis Editorial — página inicial">
-        <img src="assets/logofrontis.jpg" alt="Frôntis Editorial" class="header__logo" width="140" height="40">
+        <img src="assets/logofrontis.jpg" alt="Frôntis Editorial" class="header__logo" width="137" height="64">
+        <span class="header__marca-texto">
+          <span class="header__nome">FRÔNTIS EDITORIAL</span>
+          <span class="header__assinatura">EDITANDO LIVROS DESDE 1993</span>
+        </span>
       </a>
 
       <nav class="header__nav" aria-label="Navegação principal">
@@ -160,9 +183,14 @@
         </div>
         <div class="hero__imagem">
           <div class="hero__capas">
-            <img src="assets/img/hero-01.jpg" alt="Capa de livro diagramado pela Frôntis Editorial — exemplo 1" class="hero__capa hero__capa--1" width="200" height="292" loading="lazy">
-            <img src="assets/img/hero-02.jpg" alt="Capa de livro diagramado pela Frôntis Editorial — exemplo 2" class="hero__capa hero__capa--2" width="200" height="292" loading="lazy">
-            <img src="assets/img/hero-03.jpg" alt="Capa de livro diagramado pela Frôntis Editorial — exemplo 3" class="hero__capa hero__capa--3" width="200" height="292" loading="lazy">
+            <!-- Capas ao fundo, menores e com opacidade reduzida, só para dar profundidade à composição -->
+            <img src="assets/img/hero-01.jpg" alt="Capa de livro diagramado pela Frôntis Editorial, ao fundo — exemplo 1" class="hero__capa hero__capa--1" width="200" height="292" loading="lazy">
+            <img src="assets/img/hero-02.jpg" alt="Capa de livro diagramado pela Frôntis Editorial, ao fundo — exemplo 2" class="hero__capa hero__capa--2" width="200" height="292" loading="lazy">
+            <!-- Capa em primeiro plano: livro "Garriado", indicado pelo cliente como o mais chamativo.
+                 TROCAR AQUI: assets/img/livros/garriado.jpg é um placeholder — substituir pela capa real.
+                 ATENÇÃO: "Garriado" NÃO consta na lista de livros à venda enviada pelo cliente —
+                 CONFIRMAR com o cliente o título exato do livro e o arquivo de capa correto antes de publicar. -->
+            <img src="assets/img/livros/garriado.jpg" alt="Capa do livro Garriado, em destaque" class="hero__capa hero__capa--3" width="200" height="300" loading="lazy">
           </div>
         </div>
       </div>
@@ -306,7 +334,7 @@
       <div class="container">
         <span class="olho">O que publicamos</span>
         <h2 class="titulo-secao">Produtos</h2>
-        <p class="produtos__texto">A Frôntis executa o layout das páginas e capas conforme o desejo do autor. Muitos autores já enviam a capa da frente pronta.</p>
+        <p class="produtos__texto">A <strong class="nome-marca">Frôntis</strong> executa o layout das páginas e capas conforme o desejo do autor. Muitos autores já enviam a capa da frente pronta.</p>
         <p class="produtos__texto">No entanto, não há muito o que se inovar, pois os leitores estão habituados com a formatação tradicional dos livros. O importante é que a informação seja de fácil leitura e compreensão.</p>
 
         <div class="produtos__grid" data-anim-grupo>
@@ -429,24 +457,20 @@
     </section>
 
     <!-- 6. Portfólio (links externos) -->
-    <section class="portfolio section--clara" id="portfolio">
-      <!-- A) Destaque de autoridade -->
-      <div class="portfolio__destaque">
-        <div class="container portfolio__destaque-inner">
-          <div class="portfolio__destaque-numero-bloco">
-            <span class="portfolio__destaque-numero" aria-hidden="true">500+</span>
-            <span class="portfolio__destaque-linha" aria-hidden="true"></span>
-          </div>
-          <p class="portfolio__destaque-texto">Mais de 500 Anais de congressos das sociedades de especialidades médicas publicados na Collectanea Symposium e oferecidos no dia do evento.</p>
-        </div>
-      </div>
-
-      <!-- B) Livros à venda, com o Portfólio de autores independentes logo
-           abaixo (empilhados em qualquer tamanho de tela). A compra
-           acontece FORA do site: cada capa é apenas um link para a
-           plataforma externa (Uiclap). Isto NÃO é uma loja virtual — sem
-           carrinho, preço, quantidade ou checkout. -->
+    <!-- A faixa azul com o destaque "500+ Anais de congressos" foi removida
+         a pedido do cliente. A seção passou a ter padding próprio (classe
+         "section") e ganhou um título (olho + h2), já que a faixa era o
+         único elemento com esse papel visual na seção. -->
+    <section class="portfolio section section--clara" id="portfolio">
       <div class="container">
+        <span class="olho">Publicações</span>
+        <h2 class="titulo-secao">Portfólio</h2>
+
+        <!-- Livros à venda, com o Portfólio de autores independentes logo
+             abaixo (empilhados em qualquer tamanho de tela). A compra
+             acontece FORA do site: cada capa é apenas um link para a
+             plataforma externa (Uiclap). Isto NÃO é uma loja virtual — sem
+             carrinho, preço, quantidade ou checkout. -->
         <div class="portfolio__colunas" data-anim-grupo>
           <div class="portfolio__coluna anim-item">
             <span class="olho">Adquira já</span>
@@ -512,13 +536,67 @@
                   </div>
                 </div>
               </article>
+
+              <!-- Livros 5, 6 e 7 — DADOS PENDENTES: extrair da página
+                   https://frontis.com.br/livros_a_venda.html os 3 primeiros
+                   livros que aparecem nela (capa, título, detalhes de edição
+                   e links de PDF/Uiclap). Estrutura idêntica à dos livros
+                   1 a 4 acima, só com os campos abaixo em placeholder. -->
+
+              <!-- Livro 5 — DADOS PENDENTES -->
+              <article class="livro-card anim-item">
+                <div class="livro-card__capa">
+                  <!-- DADOS PENDENTES — trocar pela capa real -->
+                  <img src="assets/img/livros/placeholder-05.jpg" alt="Capa do livro — DADOS PENDENTES" width="160" height="240" loading="lazy">
+                </div>
+                <div class="livro-card__corpo">
+                  <h4 class="livro-card__titulo"><!-- DADOS PENDENTES — título -->Título do livro (DADOS PENDENTES)</h4>
+                  <p class="livro-card__subtitulo"><!-- DADOS PENDENTES — edição/ano/páginas -->Edição · ano · páginas (DADOS PENDENTES)</p>
+                  <div class="livro-card__links">
+                    <a href="#" class="btn btn--outline livro-card__link-pdf" target="_blank" rel="noopener noreferrer" aria-label="Baixar amostra em PDF do livro — DADOS PENDENTES, abre em nova aba">PDF</a>
+                    <a href="#" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Adquira o livro impresso — DADOS PENDENTES, abre em nova aba">Adquira o livro impresso</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Livro 6 — DADOS PENDENTES -->
+              <article class="livro-card anim-item">
+                <div class="livro-card__capa">
+                  <!-- DADOS PENDENTES — trocar pela capa real -->
+                  <img src="assets/img/livros/placeholder-06.jpg" alt="Capa do livro — DADOS PENDENTES" width="160" height="240" loading="lazy">
+                </div>
+                <div class="livro-card__corpo">
+                  <h4 class="livro-card__titulo"><!-- DADOS PENDENTES — título -->Título do livro (DADOS PENDENTES)</h4>
+                  <p class="livro-card__subtitulo"><!-- DADOS PENDENTES — edição/ano/páginas -->Edição · ano · páginas (DADOS PENDENTES)</p>
+                  <div class="livro-card__links">
+                    <a href="#" class="btn btn--outline livro-card__link-pdf" target="_blank" rel="noopener noreferrer" aria-label="Baixar amostra em PDF do livro — DADOS PENDENTES, abre em nova aba">PDF</a>
+                    <a href="#" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Adquira o livro impresso — DADOS PENDENTES, abre em nova aba">Adquira o livro impresso</a>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Livro 7 — DADOS PENDENTES -->
+              <article class="livro-card anim-item">
+                <div class="livro-card__capa">
+                  <!-- DADOS PENDENTES — trocar pela capa real -->
+                  <img src="assets/img/livros/placeholder-07.jpg" alt="Capa do livro — DADOS PENDENTES" width="160" height="240" loading="lazy">
+                </div>
+                <div class="livro-card__corpo">
+                  <h4 class="livro-card__titulo"><!-- DADOS PENDENTES — título -->Título do livro (DADOS PENDENTES)</h4>
+                  <p class="livro-card__subtitulo"><!-- DADOS PENDENTES — edição/ano/páginas -->Edição · ano · páginas (DADOS PENDENTES)</p>
+                  <div class="livro-card__links">
+                    <a href="#" class="btn btn--outline livro-card__link-pdf" target="_blank" rel="noopener noreferrer" aria-label="Baixar amostra em PDF do livro — DADOS PENDENTES, abre em nova aba">PDF</a>
+                    <a href="#" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Adquira o livro impresso — DADOS PENDENTES, abre em nova aba">Adquira o livro impresso</a>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
 
           <div class="portfolio__coluna portfolio__coluna--centro anim-item">
             <span class="olho">Quem já publicou</span>
             <h3 class="portfolio__titulo">Portfólio de autores independentes</h3>
-            <p class="portfolio__apoio">Conheça obras de autores independentes já editadas e diagramadas pela Frôntis Editorial.</p>
+            <p class="portfolio__apoio">Conheça obras de autores independentes já editadas e diagramadas pela <strong class="nome-marca">Frôntis Editorial</strong>.</p>
 
             <div class="portfolio__cta-bloco">
               <a href="https://frontis.com.br/livros_de_autores_4.html" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Conheça o portfólio de autores independentes, abre em nova aba">Conheça o portfólio</a>
@@ -704,6 +782,17 @@
         <span class="olho">Nossa história</span>
         <h2 class="titulo-secao">A Frôntis Editorial</h2>
 
+        <!-- IMAGEM DO WORD — extrair a imagem explicativa sobre o que é a Frôntis do
+             documento Word enviado pelo cliente e exportar em boa resolução, substituindo
+             o placeholder assets/img/sobre-frontis.jpg (largura e altura abaixo também são
+             placeholder — ajustar aos valores reais da imagem exportada).
+             RECOMENDAÇÃO AO CLIENTE: se a imagem contiver texto essencial (explicação sobre
+             a empresa), o ideal é que esse mesmo texto exista também em HTML abaixo dela —
+             texto dentro de imagem não é lido por leitores de tela nem indexado pelo Google. -->
+        <figure class="sobre__imagem-explicativa">
+          <img src="assets/img/sobre-frontis.jpg" alt="Infográfico explicativo sobre a Frôntis Editorial: o que é a empresa, desde quando atua e como funciona o processo de editoração de livros" width="900" height="600" loading="lazy">
+        </figure>
+
         <ol class="historia__linha-do-tempo" id="historia-linha" data-anim-grupo>
           <li class="historia__marco anim-item">
             <div class="historia__marcador"><span class="historia__ano">1993</span></div>
@@ -722,7 +811,7 @@
           <li class="historia__marco anim-item">
             <div class="historia__marcador"><span class="historia__ano">2001</span></div>
             <div class="historia__conteudo">
-              <p class="historia__texto">Criação do Cd-book Frôntis. A facilidade do cd-rom resolveu um antigo problema do livro: atender a pedidos de edições esgotadas. Também possibilitou oferecer ao cliente as edições dos eventos anteriores no mesmo cd e, principalmente, o valor final não dependia mais da quantidade de páginas e ilustrações.</p>
+              <p class="historia__texto">Criação do Cd-book <strong class="nome-marca">Frôntis</strong>. A facilidade do cd-rom resolveu um antigo problema do livro: atender a pedidos de edições esgotadas. Também possibilitou oferecer ao cliente as edições dos eventos anteriores no mesmo cd e, principalmente, o valor final não dependia mais da quantidade de páginas e ilustrações.</p>
             </div>
           </li>
 
@@ -771,7 +860,7 @@
           <h2 class="titulo-secao">Sobre o editor</h2>
           <p class="editor__nome">Ricardo Sterchele</p>
 
-          <p>Ricardo Sterchele é o editor fundador da Frôntis Editorial. É Bacharel em Editoração pela Escola de Comunicações e Artes (ECA) da USP com Mestrado em Cibernética & Comunicação pela mesma universidade.</p>
+          <p>Ricardo Sterchele é o editor fundador da <strong class="nome-marca">Frôntis Editorial</strong>. É Bacharel em Editoração pela Escola de Comunicações e Artes (ECA) da USP com Mestrado em Cibernética & Comunicação pela mesma universidade.</p>
 
           <p>Atua na área editorial desde 1981, implantando e coordenando linhas editoriais e criação de publicações especiais e periódicos na área institucional, didática, técnica e científica de grandes empresas e centros de pesquisa de universidades.</p>
 
@@ -902,7 +991,7 @@
     <!-- 10. Rodapé -->
     <div class="container rodape__grid">
       <div class="rodape__coluna rodape__coluna--marca">
-        <img src="assets/logofooter.png" alt="Frôntis Editorial" class="rodape__logo" width="83" height="40" loading="lazy">
+        <img src="assets/logofooter.png" alt="Frôntis Editorial" class="rodape__logo" width="150" height="72" loading="lazy">
       </div>
 
       <nav class="rodape__coluna" aria-label="Navegação do rodapé">
