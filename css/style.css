@@ -325,14 +325,9 @@ ol li {
   min-height: var(--header-height);
 }
 
-/* Logo + nome da marca lado a lado, lendo como uma assinatura única
-   em vez de um ícone solto (pedido do cliente: "o nome precisa
-   aparecer mais, para fixar a marca") */
 .header__marca {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: var(--esp-2);
   flex-shrink: 0;
 }
 
@@ -341,43 +336,9 @@ ol li {
   height: 64px;
 }
 
-.header__marca-texto {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.header__nome {
-  font-family: var(--fonte-titulos);
-  font-weight: 700;
-  font-size: var(--texto-18);
-  color: var(--azul-marinho);
-  white-space: nowrap;
-}
-
-.header__assinatura {
-  font-family: var(--fonte-corpo);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--verde);
-  white-space: nowrap;
-}
-
 @media (max-width: 899.98px) {
   .header__logo {
     height: 48px;
-  }
-
-  .header__nome {
-    font-size: var(--texto-16);
-    white-space: normal;
-  }
-
-  .header__assinatura {
-    font-size: 9px;
-    white-space: normal;
   }
 }
 
