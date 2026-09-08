@@ -11,7 +11,7 @@
   --verde: #1F7A4D; /* PLACEHOLDER — confirmar com o logotipo */
   --verde-escuro: #155C39;
   --verde-claro: #EAF3EE;
-  --azul-marinho: #143A5E;
+  --azul-marinho: #155C39;
   --azul-escuro: #10243B; /* texto principal — substitui o preto */
   --vermelho: #C0392B;
   --vermelho-hover: #A32D20;
@@ -87,6 +87,13 @@ h3 { font-size: var(--texto-30); }
 h4 { font-size: var(--texto-24); }
 h5 { font-size: var(--texto-20); }
 h6 { font-size: var(--texto-18); }
+
+@media (max-width: 767px) {
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center !important;
+  }
+
+}
 
 p {
   max-width: var(--largura-maxima-leitura);
@@ -531,6 +538,10 @@ ol li {
 /* -------------------------------------------------------------------
    8. HERO
    ------------------------------------------------------------------- */
+.hero {
+  padding-top: var(--esp-4);
+}
+
 .hero__inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -542,6 +553,13 @@ ol li {
 .hero__titulo {
   font-size: clamp(2.375rem, 1.4rem + 4vw, 3.125rem);
   margin-bottom: var(--esp-3);
+}
+
+@media (max-width: 767px) {
+  .hero__titulo {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
 }
 
 .hero__texto {
@@ -588,7 +606,7 @@ ol li {
 .hero__capas {
   position: relative;
   width: 100%;
-  max-width: 340px;
+  max-width: 400px;
   aspect-ratio: 1 / 1;
 }
 
@@ -596,22 +614,20 @@ ol li {
   position: absolute;
   top: 50%;
   left: 50%;
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border-radius: var(--raio-borda);
 }
 
-/* Capas ao fundo: menores, rotacionadas e com opacidade reduzida, para
-   dar profundidade à composição sem competir com o livro em destaque */
+/* Capas ao fundo: deslocadas e rotacionadas para dar profundidade à composição. */
 .hero__capa--1,
 .hero__capa--2 {
-  width: 44%;
-  opacity: 0.55;
+  width: 58%;
   box-shadow: 2px 4px 10px rgba(16, 36, 59, 0.15);
 }
 
 .hero__capa--1 {
-  transform: translate(-82%, -58%) rotate(-10deg);
+  transform: translate(-82%, -50%) rotate(-6deg);
   z-index: 1;
 }
 
@@ -620,12 +636,10 @@ ol li {
   z-index: 2;
 }
 
-/* Capa em primeiro plano — o livro "Garriado", indicado pelo cliente
-   como o mais chamativo. Maior, centralizada, com sombra suave à
-   direita e abaixo simulando volume de livro impresso. */
+/* Capa do MIS em primeiro plano, com Garriado parcialmente visível ao fundo. */
 .hero__capa--3 {
-  width: 64%;
-  transform: translate(-50%, -50%);
+  width: 58%;
+  transform: translate(-22%, -50%) rotate(2deg);
   z-index: 3;
   box-shadow: 8px 10px 24px rgba(16, 36, 59, 0.32);
 }
@@ -657,23 +671,27 @@ ol li {
     order: 2;
   }
 
-  /* No mobile, só a capa em destaque (Garriado) aparece, centralizada */
+  /* No mobile, mantém as duas capas visíveis e dentro do container. */
   .hero__capas {
-    position: static;
-    max-width: 220px;
-    aspect-ratio: auto;
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1.05;
     margin-inline: auto;
   }
 
-  .hero__capa--1,
-  .hero__capa--2 {
-    display: none;
+  .hero__capa--1 {
+    display: block;
+    position: absolute;
+    width: 54%;
+    transform: translate(-83%, -50%) rotate(-5deg);
   }
 
   .hero__capa--3 {
-    position: static;
-    width: 100%;
-    transform: none;
+    display: block;
+    position: absolute;
+    width: 57%;
+    transform: translate(-20%, -50%) rotate(2deg);
     box-shadow: 6px 8px 20px rgba(16, 36, 59, 0.28);
   }
 
@@ -1120,10 +1138,7 @@ ol li {
   color: var(--cinza-texto);
 }
 
-/* Grade dos 7 livros à venda: 1 coluna no mobile, 2 no tablet, 3 no
-   desktop. O Grid não centraliza a última linha incompleta por padrão
-   (sem justify-content), então o card sobrando (7 não é múltiplo de 3)
-   fica alinhado à esquerda naturalmente. */
+/* Grade dos 5 livros à venda: 1 coluna no mobile, 2 no tablet, 3 no desktop. */
 .portfolio__livros-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1178,6 +1193,34 @@ ol li {
   display: none;
 }
 
+.livro-card__marca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 160px;
+  min-height: 52px;
+  margin-inline: auto;
+  padding: 8px 16px;
+  border-radius: 0 0 var(--raio-borda) var(--raio-borda);
+  background-color: var(--verde-escuro);
+}
+
+.livro-card__marca img {
+  display: block;
+  width: min(120px, 100%);
+  height: auto;
+  max-height: 36px;
+  object-fit: contain;
+}
+
+.livro-card__reserva {
+  width: 100%;
+  max-width: 160px;
+  min-height: 1px;
+  margin-inline: auto;
+}
+
 /* Mesma largura da capa (160px), centralizado, para título, subtítulo e
    links ficarem alinhados com a imagem acima em vez de esticar até a
    borda da coluna do grid */
@@ -1188,7 +1231,7 @@ ol li {
   width: 100%;
   max-width: 160px;
   margin-inline: auto;
-  margin-top: var(--esp-2);
+  margin-top: var(--esp-1);
   text-align: center;
 }
 
@@ -1604,6 +1647,10 @@ ol li {
     grid-template-columns: 1fr 1fr;
     gap: var(--esp-7);
   }
+
+  .formulario-contato {
+    margin-top: calc(-1 * var(--esp-3));
+  }
 }
 
 .contato__texto {
@@ -1746,7 +1793,7 @@ ol li {
    19. RODAPÉ
    ------------------------------------------------------------------- */
 .rodape {
-  background-color: var(--azul-marinho);
+  background-color: var(--verde-escuro);
   color: var(--branco);
   padding-block: var(--esp-7);
 }
