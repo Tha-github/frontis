@@ -1798,6 +1798,12 @@ ol li {
   margin-top: var(--esp-2);
 }
 
+@media (max-width: 767px) {
+  .contato__enviar {
+    align-self: center;
+  }
+}
+
 .contato__sucesso {
   margin-top: var(--esp-2);
   padding: var(--esp-2) var(--esp-3);
