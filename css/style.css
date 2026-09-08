@@ -1326,8 +1326,7 @@ ol li {
   margin-top: var(--esp-5);
 }
 
-/* Livros à venda e Portfólio empilhados, o Portfólio sempre abaixo dos
-   livros à venda — mesma largura em qualquer tamanho de tela. */
+/* Livros à venda abaixo do Portfólio, com a mesma largura em qualquer tela. */
 .portfolio__colunas {
   display: grid;
   grid-template-columns: 1fr;
