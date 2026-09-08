@@ -89,10 +89,23 @@ h5 { font-size: var(--texto-20); }
 h6 { font-size: var(--texto-18); }
 
 @media (max-width: 767px) {
+  body,
   h1, h2, h3, h4, h5, h6 {
     text-align: center !important;
   }
 
+  input,
+  select,
+  textarea,
+  button {
+    text-align: center;
+  }
+
+  ul,
+  ol {
+    padding-left: 0;
+    list-style-position: inside;
+  }
 }
 
 p {
