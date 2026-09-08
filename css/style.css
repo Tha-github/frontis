@@ -724,6 +724,12 @@ ol li {
   }
 }
 
+@media (max-width: 767px) {
+  .hero__imagem {
+    margin-top: calc(-1 * var(--esp-2));
+  }
+}
+
 @media (min-width: 900px) {
   .hero__inner {
     grid-template-columns: 1.1fr 0.9fr;
