@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Marca a página como "com JavaScript" bem cedo, para as animações de
+       entrada só ficarem ocultas por CSS quando o JS realmente for rodar -->
+  <script>document.documentElement.classList.add('js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de autores independentes — Frôntis Editorial</title>
+  <meta name="description" content="Conheça as obras de autores independentes editadas e diagramadas pela Frôntis Editorial.">
+  <link rel="canonical" href="https://www.frontis.com.br/portfolio.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Frôntis Editorial">
+  <meta property="og:url" content="https://www.frontis.com.br/portfolio.html">
+  <meta property="og:title" content="Portfólio de autores independentes — Frôntis Editorial">
+  <meta property="og:description" content="Conheça as obras de autores independentes editadas e diagramadas pela Frôntis Editorial.">
+  <!-- TROCAR AQUI: og:image é um placeholder (1200x630px recomendado) — substituir por uma imagem real assim que o cliente enviar fotos/capas -->
+  <meta property="og:image" content="https://www.frontis.com.br/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Frôntis Editorial — editoração de livros desde 1993">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portfólio de autores independentes — Frôntis Editorial">
+  <meta name="twitter:description" content="Conheça as obras de autores independentes editadas e diagramadas pela Frôntis Editorial.">
+  <meta name="twitter:image" content="https://www.frontis.com.br/assets/img/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <!-- Preconnect para otimizar carregamento das fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Dados estruturados (SEO): identifica a Frôntis como prestadora de
+       serviço de editoração. Telefone e endereço ficam de fora até o
+       cliente confirmar esses dados (ver seção 14 do PROJETO.md) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "ProfessionalService"],
+    "name": "Frôntis Editorial",
+    "alternateName": "Escritório Editorial Frôntis",
+    "url": "https://www.frontis.com.br/",
+    "logo": "https://www.frontis.com.br/assets/logo.svg",
+    "image": "https://www.frontis.com.br/assets/logo.svg",
+    "description": "Editoração de livros: projeto gráfico e diagramação, capa com contracapa e orelhas, registro de ISBN e ficha catalográfica, indicação de gráfica para impressão e publicação em plataformas de venda.",
+    "foundingDate": "1993",
+    "founder": {
+      "@type": "Person",
+      "name": "Ricardo Sterchele"
+    },
+    "areaServed": "BR",
+    "knowsAbout": [
+      "Editoração de livros",
+      "Diagramação",
+      "Projeto gráfico de capas",
+      "ISBN",
+      "Ficha catalográfica",
+      "Anais de congresso",
+      "Publicação de e-books"
+    ],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Projeto gráfico e diagramação" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Capa simples com contracapa e orelhas" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Registro de ISBN e ficha catalográfica" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Indicação de gráfica para impressão" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Publicação em plataformas de venda (Uiclap, Amazon, Clube do Livro)" } }
+    ]
+  }
+  </script>
+  <!-- PENDENTE: adicionar "telephone" e "address" ao JSON-LD acima assim que o cliente informar esses dados -->
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Topbar de contato: e-mail visível logo na abertura do site,
+       pedido do cliente. Fica fixa junto com o header ao rolar (não
+       some) para o e-mail continuar acessível em qualquer ponto da
+       página — decisão de manter simples e sempre visível, sem JS
+       extra para esconder/mostrar ao rolar. -->
+  <div class="topbar" id="topbar">
+    <div class="container topbar__inner">
+      <!-- TROCAR AQUI: telefone fixo — inserir aqui quando/se o cliente confirmar uma linha fixa (ver PROJETO.md, seção 14). Por ora, o espaço fica reservado e vazio. -->
+      <span class="topbar__telefone" aria-hidden="true"></span>
+      <a href="mailto:escritorio@frontis.com.br" class="topbar__email" aria-label="Enviar e-mail para escritorio@frontis.com.br">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+        <span>escritorio@frontis.com.br</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__marca" aria-label="Frôntis Editorial — página inicial">
+        <img src="assets/logofrontis.jpg" alt="Frôntis Editorial" class="header__logo" width="137" height="64">
+      </a>
+
+      <nav class="header__nav" aria-label="Navegação principal">
+        <ul class="header__menu">
+          <li><a href="index.html#servicos" class="header__link">Serviços</a></li>
+          <li><a href="index.html#processo" class="header__link">Processo</a></li>
+          <li><a href="index.html#produtos" class="header__link">Produtos</a></li>
+          <li><a href="portfolio.html" aria-current="page" class="header__link">Portfólio</a></li>
+          <li><a href="index.html#artigos" class="header__link">Artigos</a></li>
+          <li><a href="index.html#sobre" class="header__link">Sobre</a></li>
+          <li><a href="index.html#contato" class="header__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btn header__cta" data-whatsapp>Fale comigo</a>
+
+      <button type="button" class="header__hamburguer" id="btn-hamburguer" aria-expanded="false" aria-controls="drawer-mobile" aria-label="Abrir menu de navegação">
+        <span class="header__hamburguer-linha"></span>
+        <span class="header__hamburguer-linha"></span>
+        <span class="header__hamburguer-linha"></span>
+      </button>
+    </div>
+
+    <!-- Overlay do drawer mobile -->
+    <div class="drawer-overlay" id="drawer-overlay" hidden></div>
+
+    <!-- Drawer de navegação mobile -->
+    <div class="drawer" id="drawer-mobile" role="dialog" aria-modal="true" aria-label="Menu de navegação" hidden>
+      <div class="drawer__topo">
+        <button type="button" class="drawer__fechar" id="btn-drawer-fechar" aria-label="Fechar menu">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <nav aria-label="Navegação mobile">
+        <ul class="drawer__menu">
+          <li><a href="index.html#servicos" class="drawer__link">Serviços</a></li>
+          <li><a href="index.html#processo" class="drawer__link">Processo</a></li>
+          <li><a href="index.html#produtos" class="drawer__link">Produtos</a></li>
+          <li><a href="portfolio.html" aria-current="page" class="drawer__link">Portfólio</a></li>
+          <li><a href="index.html#artigos" class="drawer__link">Artigos</a></li>
+          <li><a href="index.html#sobre" class="drawer__link">Sobre</a></li>
+          <li><a href="index.html#contato" class="drawer__link">Contato</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="btn drawer__cta" data-whatsapp>Fale comigo</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section section--clara portfolio-abertura">
+      <div class="container">
+        <a class="portfolio-abertura__voltar" href="index.html#portfolio">← Voltar ao site</a>
+        <span class="olho">Autores independentes</span>
+        <h1>Nosso portfólio</h1>
+        <p class="portfolio-abertura__texto">Conheça obras editadas e diagramadas pela <strong class="nome-marca">Frôntis Editorial</strong>.</p>
+        <p class="portfolio-abertura__nota">A maioria das capas foi enviada pelos autores, e o layout das páginas seguiu as preferências de cada um.</p>
+      </div>
+    </section>
+    <section class="section portfolio-galeria" aria-labelledby="galeria-titulo">
+      <div class="container">
+        <span class="olho">15 obras em destaque</span>
+        <h2 class="titulo-secao" id="galeria-titulo">Cada livro, uma história</h2>
+        <p class="portfolio__apoio">Clique em uma capa para ampliar e navegar pelas obras.</p>
+        <div class="portfolio-galeria__grid">
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/01-CAPA_20Simples_20Empoderamento.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 1 de 15" aria-label="Ampliar capa da obra 1">
+            <img src="assets/img/portfolio/01-CAPA_20Simples_20Empoderamento.jpg" alt="Capa da obra 1 do portfólio de autores independentes" loading="eager" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/02-_20CAPA_20simples_20Gratidao.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 2 de 15" aria-label="Ampliar capa da obra 2">
+            <img src="assets/img/portfolio/02-_20CAPA_20simples_20Gratidao.jpg" alt="Capa da obra 2 do portfólio de autores independentes" loading="eager" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/02-EDUCA_C3_87_C3_83O_20o_20progresso_20da_20na_C3_A7_C3_A3o_20-_20CAPA.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 3 de 15" aria-label="Ampliar capa da obra 3">
+            <img src="assets/img/portfolio/02-EDUCA_C3_87_C3_83O_20o_20progresso_20da_20na_C3_A7_C3_A3o_20-_20CAPA.jpg" alt="Capa da obra 3 do portfólio de autores independentes" loading="eager" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/03-CAPA_20simples_20Prosperidade.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 4 de 15" aria-label="Ampliar capa da obra 4">
+            <img src="assets/img/portfolio/03-CAPA_20simples_20Prosperidade.jpg" alt="Capa da obra 4 do portfólio de autores independentes" loading="eager" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/03-EDUCA_C3_87_C3_83O_20_C3_A9_20a_20base_20para_20constru_C3_A7_C3_A3o_20-_20CAPA.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 5 de 15" aria-label="Ampliar capa da obra 5">
+            <img src="assets/img/portfolio/03-EDUCA_C3_87_C3_83O_20_C3_A9_20a_20base_20para_20constru_C3_A7_C3_A3o_20-_20CAPA.jpg" alt="Capa da obra 5 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/4-Atos_20dos_20Apostolos_20CAPA.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 6 de 15" aria-label="Ampliar capa da obra 6">
+            <img src="assets/img/portfolio/4-Atos_20dos_20Apostolos_20CAPA.jpg" alt="Capa da obra 6 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/05-CAPA_20simples_20DNA_20Prospero_20A4.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 7 de 15" aria-label="Ampliar capa da obra 7">
+            <img src="assets/img/portfolio/05-CAPA_20simples_20DNA_20Prospero_20A4.jpg" alt="Capa da obra 7 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/05-Educa_C3_A7_C3_A3o_20e_20Pesquisa_20-_20CAPA.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 8 de 15" aria-label="Ampliar capa da obra 8">
+            <img src="assets/img/portfolio/05-Educa_C3_A7_C3_A3o_20e_20Pesquisa_20-_20CAPA.jpg" alt="Capa da obra 8 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/05-Educa_C3_A7_C3_A3o_20experi_C3_AAncias_20diversas_20-_20EBOOK.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 9 de 15" aria-label="Ampliar capa da obra 9">
+            <img src="assets/img/portfolio/05-Educa_C3_A7_C3_A3o_20experi_C3_AAncias_20diversas_20-_20EBOOK.jpg" alt="Capa da obra 9 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/06-CAPA_20simples_20Voce_20nasceu_20para_20dar_20certo.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 10 de 15" aria-label="Ampliar capa da obra 10">
+            <img src="assets/img/portfolio/06-CAPA_20simples_20Voce_20nasceu_20para_20dar_20certo.jpg" alt="Capa da obra 10 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/10-Capa_20Pesquisa_20educacional.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 11 de 15" aria-label="Ampliar capa da obra 11">
+            <img src="assets/img/portfolio/10-Capa_20Pesquisa_20educacional.jpg" alt="Capa da obra 11 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/13-Capa_20NOVA_20Educaci_C3_B3n_20Bioc_C3_A9ntrica.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 12 de 15" aria-label="Ampliar capa da obra 12">
+            <img src="assets/img/portfolio/13-Capa_20NOVA_20Educaci_C3_B3n_20Bioc_C3_A9ntrica.jpg" alt="Capa da obra 12 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/22-Os_20caminhos_20Educacionais-_20Capa.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 13 de 15" aria-label="Ampliar capa da obra 13">
+            <img src="assets/img/portfolio/22-Os_20caminhos_20Educacionais-_20Capa.jpg" alt="Capa da obra 13 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/27-Capa_20Pandemia.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 14 de 15" aria-label="Ampliar capa da obra 14">
+            <img src="assets/img/portfolio/27-Capa_20Pandemia.jpg" alt="Capa da obra 14 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+          <button type="button" class="portfolio-galeria__capa" data-lightbox-grupo="portfolio" data-lightbox-src="assets/img/portfolio/28-Capa_202.jpg" data-lightbox-legenda="Portfólio de autores independentes — obra 15 de 15" aria-label="Ampliar capa da obra 15">
+            <img src="assets/img/portfolio/28-Capa_202.jpg" alt="Capa da obra 15 do portfólio de autores independentes" loading="lazy" decoding="async">
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="section section--verde">
+      <div class="container">
+        <span class="olho">Seu próximo capítulo</span>
+        <h2 class="titulo-secao">Vamos publicar o seu livro?</h2>
+        <p>Conte com a Frôntis Editorial para dar forma à sua obra.</p>
+        <div class="portfolio__cta-bloco"><a href="#" class="btn" data-whatsapp>Falar com o editor</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <!-- 10. Rodapé -->
+    <div class="container rodape__grid">
+      <div class="rodape__coluna rodape__coluna--marca">
+        <img src="assets/logofooter.png" alt="Frôntis Editorial" class="rodape__logo" width="150" height="72" loading="lazy">
+      </div>
+
+      <nav class="rodape__coluna" aria-label="Navegação do rodapé">
+        <h3 class="rodape__titulo-coluna">Navegação</h3>
+        <ul class="rodape__lista">
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <li><a href="index.html#processo">Processo</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="portfolio.html" aria-current="page">Portfólio</a></li>
+          <li><a href="index.html#artigos">Artigos</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="rodape__coluna">
+        <h3 class="rodape__titulo-coluna">Contato</h3>
+        <ul class="rodape__lista">
+          <li><a href="#" data-whatsapp>WhatsApp</a></li>
+          <li><a href="mailto:escritorio@frontis.com.br">escritorio@frontis.com.br</a></li>
+          <li><a href="#" data-whatsapp>WhatsApp: (11) 94511-6620</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container rodape__barra">
+      <!-- TROCAR AQUI: incluir CNPJ quando o cliente confirmar se deseja exibir (seção 14 do PROJETO.md) -->
+      <p>&copy; <span id="ano-atual"></span> Escritório Editorial Frôntis. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- 11. Botão flutuante de WhatsApp -->
+  <a href="#" class="whatsapp-flutuante" id="whatsapp-flutuante" data-whatsapp aria-label="Falar no WhatsApp com a Frôntis Editorial">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M4 5h16v10H8l-4 4V5Z"/>
+    </svg>
+  </a>
+
+  <!-- Lightbox de imagens (reutilizável por qualquer galeria com [data-lightbox-grupo]) -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem ampliada" hidden>
+    <div class="lightbox__overlay" id="lightbox-overlay"></div>
+    <div class="lightbox__conteudo">
+      <button type="button" class="lightbox__fechar" id="lightbox-fechar" aria-label="Fechar visualização">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <button type="button" class="lightbox__anterior" id="lightbox-anterior" aria-label="Imagem anterior">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M15 5 L8 12 L15 19"/>
+        </svg>
+      </button>
+      <figure class="lightbox__figura">
+        <img src="" alt="" id="lightbox-imagem">
+        <figcaption id="lightbox-legenda"></figcaption>
+      </figure>
+      <button type="button" class="lightbox__proximo" id="lightbox-proximo" aria-label="Próxima imagem">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M9 5 L16 12 L9 19"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
