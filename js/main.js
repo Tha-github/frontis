@@ -156,7 +156,7 @@ function initMenuMobile() {
  * Ignora âncoras cuja seção ainda não existe no DOM (etapas futuras).
  */
 function initScrollSpy() {
-  const links = Array.from(document.querySelectorAll('.header__link[href^="#"]'));
+  const links = Array.from(document.querySelectorAll('.header__link'));
   if (links.length === 0) return;
 
   const secoes = links
