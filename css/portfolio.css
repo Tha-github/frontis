@@ -41,3 +41,7 @@
   .catalogo__abertura ~ section .portfolio__livros-grid { grid-template-columns: repeat(3, 1fr); gap: var(--esp-3) var(--esp-1); }
   .catalogo__abertura ~ section .livro-card__titulo { font-size: 0.85rem; }
 }
+/* Sem título nos cards: botão logo abaixo da capa */
+.catalogo__abertura ~ section .livro-card { height: auto; }
+.catalogo__abertura ~ section .livro-card__corpo { flex: 0 0 auto; margin-top: 0; }
+.catalogo__abertura ~ section .livro-card__links { margin-top: 0; padding-top: var(--esp-1); }
