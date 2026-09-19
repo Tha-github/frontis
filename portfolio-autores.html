@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livros de autores | Frôntis Editorial</title>
+  <meta name="description" content="Livros de autores editados e diagramados pela Frôntis Editorial.">
+  <link rel="canonical" href="https://www.frontis.com.br/portfolio-autores.html">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <!-- Preconnect para otimizar carregamento das fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Topbar de contato: e-mail visível logo na abertura do site,
+       pedido do cliente. Fica fixa junto com o header ao rolar (não
+       some) para o e-mail continuar acessível em qualquer ponto da
+       página — decisão de manter simples e sempre visível, sem JS
+       extra para esconder/mostrar ao rolar. -->
+  <div class="topbar" id="topbar">
+    <div class="container topbar__inner">
+      <!-- TROCAR AQUI: telefone fixo — inserir aqui quando/se o cliente confirmar uma linha fixa (ver PROJETO.md, seção 14). Por ora, o espaço fica reservado e vazio. -->
+      <span class="topbar__telefone" aria-hidden="true"></span>
+      <a href="mailto:escritorio@frontis.com.br" class="topbar__email" aria-label="Enviar e-mail para escritorio@frontis.com.br">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+        <span>escritorio@frontis.com.br</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__marca" aria-label="Frôntis Editorial — página inicial">
+        <img src="assets/logofrontis.jpg" alt="Frôntis Editorial" class="header__logo" width="137" height="64">
+      </a>
+
+      <nav class="header__nav" aria-label="Navegação principal">
+        <ul class="header__menu">
+          <li><a href="index.html#servicos" class="header__link">Serviços</a></li>
+          <li><a href="index.html#processo" class="header__link">Processo</a></li>
+          <li><a href="index.html#produtos" class="header__link">Produtos</a></li>
+          <li><a href="index.html#portfolio" class="header__link">Portfólio</a></li>
+          <li><a href="index.html#artigos" class="header__link">Artigos</a></li>
+          <li><a href="index.html#sobre" class="header__link">Sobre</a></li>
+          <li><a href="index.html#contato" class="header__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btn header__cta" data-whatsapp>Fale comigo</a>
+
+      <button type="button" class="header__hamburguer" id="btn-hamburguer" aria-expanded="false" aria-controls="drawer-mobile" aria-label="Abrir menu de navegação">
+        <span class="header__hamburguer-linha"></span>
+        <span class="header__hamburguer-linha"></span>
+        <span class="header__hamburguer-linha"></span>
+      </button>
+    </div>
+
+    <!-- Overlay do drawer mobile -->
+    <div class="drawer-overlay" id="drawer-overlay" hidden></div>
+
+    <!-- Drawer de navegação mobile -->
+    <div class="drawer" id="drawer-mobile" role="dialog" aria-modal="true" aria-label="Menu de navegação" hidden>
+      <div class="drawer__topo">
+        <button type="button" class="drawer__fechar" id="btn-drawer-fechar" aria-label="Fechar menu">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <nav aria-label="Navegação mobile">
+        <ul class="drawer__menu">
+          <li><a href="index.html#servicos" class="drawer__link">Serviços</a></li>
+          <li><a href="index.html#processo" class="drawer__link">Processo</a></li>
+          <li><a href="index.html#produtos" class="drawer__link">Produtos</a></li>
+          <li><a href="index.html#portfolio" class="drawer__link">Portfólio</a></li>
+          <li><a href="index.html#artigos" class="drawer__link">Artigos</a></li>
+          <li><a href="index.html#sobre" class="drawer__link">Sobre</a></li>
+          <li><a href="index.html#contato" class="drawer__link">Contato</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="btn drawer__cta" data-whatsapp>Fale comigo</a>
+    </div>
+  </header>
+
+
+  <main id="main-content">
+    <section class="section section--clara catalogo__abertura">
+      <div class="container">
+        <a class="catalogo__voltar" href="index.html#portfolio">← Voltar ao início</a>
+        <span class="olho">Portfólio editorial</span>
+        <h1>Livros de autores</h1>
+        <p class="catalogo__intro">Livros de autores editados e diagramados pela Frôntis Editorial.</p>
+      </div>
+    </section>
+
+    <section class="section section--clara" id="autores" aria-label="Livros de autores">
+      <div class="container">
+        <div class="portfolio__livros-grid">
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/088-Viva%20bem%20com%20FIBROMIALIGIA%20-%20CAPA%20FRENTE.jpg" alt="Capa do livro Viva bem com FIBROMIALIGIA" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Viva bem com FIBROMIALIGIA</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/088-Viva%20bem%20com%20FIBROMIALIGIA%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Viva bem com FIBROMIALIGIA, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/104-%20POVOS%20ORIGIN%C3%81RIOS%20SIM%20-%20capa%20frente.jpg" alt="Capa do livro POVOS ORIGINÁRIOS SIM" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">POVOS ORIGINÁRIOS SIM</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/104-POVOS%20ORIGIN%C3%81RIOS%20SIM%20-%20Amostra.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro POVOS ORIGINÁRIOS SIM, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/108-Hist%C3%B3ria%20do%20futebol%20de%20campo%20-%20CAPA%20frente.jpg" alt="Capa do livro A História do Futebol de Campo" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">A História do Futebol de Campo</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/108-A%20Hist%C3%B3ria%20do%20Futebol%20de%20Campo%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro A História do Futebol de Campo, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/118-03%20Gastronomia%20e%20culinaria%20CAPA%20frente.jpg" alt="Capa do livro Gastronomia e culinaria" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Gastronomia e culinaria</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/118-03%20Gastronomia%20e%20Culin%C3%A1ria%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Gastronomia e culinaria, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/121-01%20Uso%20eficiente%20do%20vapor%20-%20CAPA%20frente.jpg" alt="Capa do livro Uso eficiente do vapor" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Uso eficiente do vapor</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/121-01%20Uso%20eficiente%20do%20vapor%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Uso eficiente do vapor, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/127-Acupuntura%20-%20CAPA%20frente.jpg" alt="Capa do livro Acupuntura" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Acupuntura</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/127-Acupuntura%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Acupuntura, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/129-04%20O%20peso%20das%20%C3%A1guas%20caladas%20-%20CAPA%20frente.jpg" alt="Capa do livro O peso das águas caladas" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">O peso das águas caladas</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/129-04%20O%20peso%20das%20%C3%A1guas%20caladas%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro O peso das águas caladas, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/129-05%20A%20amante%20-%20CAPA%20frente.jpg" alt="Capa do livro A amante" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">A amante</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/129-05%20A%20amante%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro A amante, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/129-07%20Madrugadas%20de%20Vidro%20-%20CAPA%20frente.jpg" alt="Capa do livro Madrugadas de Vidro" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Madrugadas de Vidro</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/129-07%20Madrugadas%20de%20Vidro%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Madrugadas de Vidro, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/130-Angiografia%20-capa%20frente.jpg" alt="Capa do livro Angiografia" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Angiografia</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/130-Angiografia%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Angiografia, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/134-Independente%20do%20lado%20das%20grades%20-%20CAPA%20frente.jpg" alt="Capa do livro Independente do lado das grades" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Independente do lado das grades</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/134-Independente%20do%20lado%20das%20grades%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Independente do lado das grades, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/135-01%20O%20jogo%20do%20poder%20-%20CAPA%20frente.png" alt="Capa do livro O jogo do poder" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">O jogo do poder</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/135-01%20O%20jogo%20do%20poder%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro O jogo do poder, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/137-M%C3%A3os%20que%20calam%20-%20capa%20frente.jpg" alt="Capa do livro Mãos que calam" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Mãos que calam</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/137-M%C3%A3os%20que%20calam%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Mãos que calam, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/141-02%20MANUAL%20APOSENTADORIA%20EMBRAPA%20-%20CAPA%20frente.jpg" alt="Capa do livro MANUAL APOSENTADORIA EMBRAPA" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">MANUAL APOSENTADORIA EMBRAPA</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/141-02%20MANUAL%20APOSENTADORIA%20EMBRAPA%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro MANUAL APOSENTADORIA EMBRAPA, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/142-A%20Menina%20que%20via%20Iemanj%C3%A1%20-%20CAPA%20frente.jpg" alt="Capa do livro A Menina que via Iemanjá 2ed" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">A Menina que via Iemanjá 2ed</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/142-A%20Menina%20que%20via%20Iemanj%C3%A1%202ed-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro A Menina que via Iemanjá 2ed, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/147-01%20Princ%C3%ADpios%20de%20administra%C3%A7%C3%A3o%20b%C3%ADblica%20-%20CAPA%20frente.jpg" alt="Capa do livro Princípios de administração bíblica" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Princípios de administração bíblica</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/147-01%20Princ%C3%ADpios%20de%20administra%C3%A7%C3%A3o%20b%C3%ADblica%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Princípios de administração bíblica, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/147-02%20hist%C3%B3ria%20dos%20her%C3%B3is%20negros%20na%20B%C3%ADblia%20-%20CAPA%20frente.jpg" alt="Capa do livro História dos heróis negros na Bíblia" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">História dos heróis negros na Bíblia</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/147-02%20hist%C3%B3ria%20dos%20her%C3%B3is%20negros%20na%20B%C3%ADblia%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro História dos heróis negros na Bíblia, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/148-Parkinson%20-%20CAPA%20frente.jpg" alt="Capa do livro Parkinson" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Parkinson</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/148-Parkinson%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Parkinson, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/150-Primeiros%20socorros%20em%20casa%20-CAPA%20frente.jpg" alt="Capa do livro Primeiros socorros em casa" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Primeiros socorros em casa</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/150-Primeiros%20socorros%20em%20casa%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Primeiros socorros em casa, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/154-01%20O%20Anjo%20a%20Poltrona%20-%20CAPA%20frente.jpg" alt="Capa do livro O Anjo a Poltrona" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">O Anjo a Poltrona</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/154-01%20O%20Anjo%20a%20Poltrona%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro O Anjo a Poltrona, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/154-02%20GARRIADO%20-%20CAPA%20frente.jpg" alt="Capa do livro GARRIADO" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">GARRIADO</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/154-02%20GARRIADO%20-%20Amostra.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro GARRIADO, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/155-01%20Luz%20das%20Trevas%20-%20CAPA%20frente.jpg" alt="Capa do livro Luz das Trevas" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Luz das Trevas</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/155-01%20Luz%20das%20Trevas%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Luz das Trevas, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/155-03%20GEOMATRIX%20capa%20frente.jpg" alt="Capa do livro GEOMATRIX" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">GEOMATRIX</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/155-03%20GEOMATRIX%20amostra.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro GEOMATRIX, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/156-01%20Doen%C3%A7as%20raras%20e%20direito%20%C3%A0%20sa%C3%BAde%20-%20CAPA%20frente.jpg" alt="Capa do livro Doenças raras e direito à saúde" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Doenças raras e direito à saúde</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/156-01%20Doen%C3%A7as%20raras%20e%20direito%20%C3%A0%20sa%C3%BAde%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Doenças raras e direito à saúde, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/156-02%20Parto%20Silenciado%20-%20CAPA%20frente.jpg" alt="Capa do livro Parto Silenciado" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Parto Silenciado</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/156-02%20Parto%20Silenciado%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Parto Silenciado, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/157-02%20O%20pentagrama%20da%20alma%20-%20CAPA%20frente.jpg" alt="Capa do livro O pentagrama da alma" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">O pentagrama da alma</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/157-02%20O%20pentagrama%20da%20alma%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro O pentagrama da alma, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/159-01%20SEMEN%20-%20CAPA%20frente.jpg" alt="Capa do livro SEMEN" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">SEMEN</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/159-01%20SEMEN%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro SEMEN, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/159-02%20A%20Barreira%20dos%2030%20-%20capa%20frente.jpg" alt="Capa do livro A Barreira dos 30 anos" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">A Barreira dos 30 anos</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/159-02%20A%20Barreira%20dos%2030%20anos%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro A Barreira dos 30 anos, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/159-03%20AIRBNB%20-%20capa%20frente.jpg" alt="Capa do livro AIRBNB em 30 dias" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">AIRBNB em 30 dias</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/159-03%20AIRBNB%20em%2030%20dias%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro AIRBNB em 30 dias, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/162-01%20A%20IA%20vai%20me%20substituir%20no%20trabalho%20-%20CAPA%20frente.jpg" alt="Capa do livro A IA vai me substituir no trabalho" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">A IA vai me substituir no trabalho</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/162-01%20A%20IA%20vai%20me%20substituir%20no%20trabalho%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro A IA vai me substituir no trabalho, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/164-Candidato(a)%20me%20conven%C3%A7a!%20-%20CAPA%20frente.jpg" alt="Capa do livro Candidato(a) me convença!" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Candidato(a) me convença!</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/164-Candidato(a)%20me%20conven%C3%A7a!%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Candidato(a) me convença!, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/165-Dobrado%2C%20Taquara%20e%20piano%20-%20CAPA%20frente.jpg" alt="Capa do livro Dobrado, Taquara e piano" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Dobrado, Taquara e piano</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/165-Dobrado%2C%20Taquara%20e%20piano%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Dobrado, Taquara e piano, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/livrosdeautores.img/169-01%20CAPA%20frente.jpeg" alt="Capa do livro MIS origem caminho e consolidação" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">MIS origem caminho e consolidação</h3>
+            <div class="livro-card__links"><a href="assets/img/livrosdeautores.img/169-01%20MIS%20origem%20caminho%20e%20consolida%C3%A7%C3%A3o%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro MIS origem caminho e consolidação, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+      </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="rodape">
+    <!-- 10. Rodapé -->
+    <div class="container rodape__grid">
+      <div class="rodape__coluna rodape__coluna--marca">
+        <img src="assets/logofooter.png" alt="Frôntis Editorial" class="rodape__logo" width="150" height="72" loading="lazy">
+      </div>
+
+      <nav class="rodape__coluna" aria-label="Navegação do rodapé">
+        <h3 class="rodape__titulo-coluna">Navegação</h3>
+        <ul class="rodape__lista">
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <li><a href="index.html#processo">Processo</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#portfolio">Portfólio</a></li>
+          <li><a href="index.html#artigos">Artigos</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="rodape__coluna">
+        <h3 class="rodape__titulo-coluna">Contato</h3>
+        <ul class="rodape__lista">
+          <li><a href="#" data-whatsapp>WhatsApp</a></li>
+          <li><a href="mailto:escritorio@frontis.com.br">escritorio@frontis.com.br</a></li>
+          <li><a href="#" data-whatsapp>WhatsApp: (11) 94511-6620</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container rodape__barra">
+      <!-- TROCAR AQUI: incluir CNPJ quando o cliente confirmar se deseja exibir (seção 14 do PROJETO.md) -->
+      <p>&copy; <span id="ano-atual"></span> Escritório Editorial Frôntis. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -28,7 +28,9 @@ estrutura relativa (upload na raiz do domínio, ao lado das páginas
 antigas):
 
 - `index.html`
-- `/css` (reset.css, style.css)
+- `portfolio-autores.html`
+- `portfolio-vade-mecum.html`
+- `/css` (reset.css, style.css, portfolio.css)
 - `/js` (main.js)
 - `/assets` (imagens, PDFs em `/assets/pdf/`, favicon, logos)
 - `robots.txt`
@@ -91,3 +93,22 @@ informados pelo cliente vieram sem "www"
 (`https://frontis.com.br/...`). Confirmar com a hospedagem que existe
 redirecionamento entre as duas formas (apex → www ou o inverso) antes
 da publicação, para nenhum link antigo quebrar.
+
+## 8. Novas páginas do portfólio
+
+A página inicial oferece três acessos para duas páginas novas: Livros de autores
+e Edições institucionais em `portfolio-autores.html`, e Vade-mécum em
+`portfolio-vade-mecum.html`. Edições institucionais tem acesso direto à âncora
+`#institucionais`. Os três botões usam a mesma estilização.
+Os nomes antigos continuam preservados.
+
+O catálogo completo depende do envio da relação organizada de 50 livros
+de autores (com capas e PDFs), 16 edições institucionais e 6 vade-mécuns.
+Por enquanto, autores apresenta apenas os livros já cadastrados na página
+inicial; as outras coleções exibem um aviso de catálogo em atualização.
+Não foram criadas publicações ou URLs de PDF fictícias.
+
+Para cadastrar as obras, inserir os cards diretamente no HTML das páginas,
+usando a estrutura `.livro-card` existente. Guardar capas e PDFs novos em
+`assets`, usar caminhos relativos e identificar links que abrem nova aba.
+Os PDFs das amostras existentes continuam em `/wa_files/` no site atual.

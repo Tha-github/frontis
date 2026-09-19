@@ -929,6 +929,12 @@ ol li {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .processo__cta {
+    text-align: left;
+  }
+}
+
 @media (max-width: 767px) {
   #processo {
     text-align: center;
@@ -1324,6 +1330,22 @@ ol li {
 
 .portfolio__cta-bloco {
   margin-top: var(--esp-5);
+}
+
+.portfolio__acessos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-2);
+}
+
+.portfolio__acessos .btn {
+  white-space: normal;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .portfolio__acessos { width: 100%; flex-direction: column; }
 }
 
 /* Livros à venda abaixo do Portfólio, com a mesma largura em qualquer tela. */

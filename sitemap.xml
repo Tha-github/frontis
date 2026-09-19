@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.frontis.com.br/portfolio-autores.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.frontis.com.br/portfolio-vade-mecum.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.frontis.com.br/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -29,7 +39,7 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.frontis.com.br/portfolio_edicoes_institucionais.html</loc>
+    <loc>https://www.frontis.com.br/portfolio-institucionais.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

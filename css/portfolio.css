@@ -1,0 +1,26 @@
+.catalogo__voltar { display: inline-block; margin-bottom: var(--esp-4); }
+.catalogo__abertura .olho { display: block; }
+.catalogo__abertura h1 { max-width: 24ch; font-size: clamp(2rem, 5vw, 3.125rem); }
+.catalogo__intro { margin-top: var(--esp-3); color: var(--cinza-texto); }
+.catalogo__nav { display: flex; flex-wrap: wrap; gap: var(--esp-2); margin-top: var(--esp-4); }
+.catalogo__nav a { padding: 10px 18px; border: 1px solid var(--verde); border-radius: var(--raio-borda); }
+.catalogo__nav a[aria-current], .catalogo__nav a:hover { background: var(--verde-escuro); color: var(--branco); }
+.catalogo__aviso { margin-top: var(--esp-4); padding: var(--esp-4); border: 1px solid var(--cinza-borda); border-radius: var(--raio-borda); background: var(--branco); }
+.catalogo__aviso h3 { font-size: var(--texto-24); margin-bottom: var(--esp-1); }
+.catalogo__contato p { margin-block: var(--esp-2) var(--esp-3); }
+.portfolio__livros-grid { margin-top: var(--esp-5); }
+@media (max-width: 767px) {
+  .catalogo__abertura h1, .catalogo__intro { margin-inline: auto; }
+  .catalogo__nav { flex-direction: column; }
+}
+.livro-card__reserva:not(:empty) { display: flex; align-items: center; justify-content: center; aspect-ratio: 2 / 3; padding: var(--esp-2); border: 1px solid var(--cinza-borda); text-align: center; }
+.livro-card__links .btn { width: 100%; text-align: center; }
+.section.catalogo__abertura { padding-block: var(--esp-3) var(--esp-4); }
+.catalogo__abertura + .section { padding-top: var(--esp-4); }
+@media (max-width: 639px) {
+  .catalogo__abertura ~ section .portfolio__livros-grid { grid-template-columns: repeat(2, 1fr); gap: var(--esp-3) var(--esp-2); }
+  .catalogo__abertura ~ section .livro-card__titulo { font-size: 1rem; }
+}
+.section.catalogo__abertura { padding-bottom: 0; }
+.catalogo__abertura + .section { padding-top: var(--esp-5); }
+.catalogo__abertura + .section .portfolio__livros-grid { margin-top: 0; }

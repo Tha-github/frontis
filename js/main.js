@@ -160,7 +160,9 @@ function initScrollSpy() {
   if (links.length === 0) return;
 
   const secoes = links
-    .map((link) => document.querySelector(link.getAttribute('href')))
+    .map((link) => link.getAttribute('href'))
+    .filter((href) => href && href.startsWith('#') && href.length > 1)
+    .map((href) => document.getElementById(href.slice(1)))
     .filter(Boolean);
 
   if (secoes.length === 0) return;

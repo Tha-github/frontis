@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vade-mécum | Frôntis Editorial</title>
+  <meta name="description" content="Coletâneas de normas e legislação organizadas para consulta, com produção editorial da Frôntis Editorial.">
+  <link rel="canonical" href="https://www.frontis.com.br/portfolio-vade-mecum.html">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+
+  <!-- Preconnect para otimizar carregamento das fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Topbar de contato: e-mail visível logo na abertura do site,
+       pedido do cliente. Fica fixa junto com o header ao rolar (não
+       some) para o e-mail continuar acessível em qualquer ponto da
+       página — decisão de manter simples e sempre visível, sem JS
+       extra para esconder/mostrar ao rolar. -->
+  <div class="topbar" id="topbar">
+    <div class="container topbar__inner">
+      <!-- TROCAR AQUI: telefone fixo — inserir aqui quando/se o cliente confirmar uma linha fixa (ver PROJETO.md, seção 14). Por ora, o espaço fica reservado e vazio. -->
+      <span class="topbar__telefone" aria-hidden="true"></span>
+      <a href="mailto:escritorio@frontis.com.br" class="topbar__email" aria-label="Enviar e-mail para escritorio@frontis.com.br">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+        <span>escritorio@frontis.com.br</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__marca" aria-label="Frôntis Editorial — página inicial">
+        <img src="assets/logofrontis.jpg" alt="Frôntis Editorial" class="header__logo" width="137" height="64">
+      </a>
+
+      <nav class="header__nav" aria-label="Navegação principal">
+        <ul class="header__menu">
+          <li><a href="index.html#servicos" class="header__link">Serviços</a></li>
+          <li><a href="index.html#processo" class="header__link">Processo</a></li>
+          <li><a href="index.html#produtos" class="header__link">Produtos</a></li>
+          <li><a href="index.html#portfolio" class="header__link">Portfólio</a></li>
+          <li><a href="index.html#artigos" class="header__link">Artigos</a></li>
+          <li><a href="index.html#sobre" class="header__link">Sobre</a></li>
+          <li><a href="index.html#contato" class="header__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="btn header__cta" data-whatsapp>Fale comigo</a>
+
+      <button type="button" class="header__hamburguer" id="btn-hamburguer" aria-expanded="false" aria-controls="drawer-mobile" aria-label="Abrir menu de navegação">
+        <span class="header__hamburguer-linha"></span>
+        <span class="header__hamburguer-linha"></span>
+        <span class="header__hamburguer-linha"></span>
+      </button>
+    </div>
+
+    <!-- Overlay do drawer mobile -->
+    <div class="drawer-overlay" id="drawer-overlay" hidden></div>
+
+    <!-- Drawer de navegação mobile -->
+    <div class="drawer" id="drawer-mobile" role="dialog" aria-modal="true" aria-label="Menu de navegação" hidden>
+      <div class="drawer__topo">
+        <button type="button" class="drawer__fechar" id="btn-drawer-fechar" aria-label="Fechar menu">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <nav aria-label="Navegação mobile">
+        <ul class="drawer__menu">
+          <li><a href="index.html#servicos" class="drawer__link">Serviços</a></li>
+          <li><a href="index.html#processo" class="drawer__link">Processo</a></li>
+          <li><a href="index.html#produtos" class="drawer__link">Produtos</a></li>
+          <li><a href="index.html#portfolio" class="drawer__link">Portfólio</a></li>
+          <li><a href="index.html#artigos" class="drawer__link">Artigos</a></li>
+          <li><a href="index.html#sobre" class="drawer__link">Sobre</a></li>
+          <li><a href="index.html#contato" class="drawer__link">Contato</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="btn drawer__cta" data-whatsapp>Fale comigo</a>
+    </div>
+  </header>
+
+
+  <main id="main-content">
+    <section class="section section--clara catalogo__abertura">
+      <div class="container">
+        <a class="catalogo__voltar" href="index.html#portfolio">← Voltar ao início</a>
+        <span class="olho">Portfólio editorial</span>
+        <h1>Vade-mécum</h1>
+        <p class="catalogo__intro">Coletâneas de normas e legislação organizadas para consulta, com produção editorial da Frôntis Editorial.</p>
+      </div>
+    </section>
+
+
+    <section class="section section--clara" id="vade-mecum" aria-label="Vade-mécum">
+      <div class="container">
+        <div class="portfolio__livros-grid">
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/vademecum.img/113-03%20Resolu%C3%A7%C3%B5es%20CNJ%20-%20CAPA%20frente.jpeg" alt="Capa do livro Resoluções CNJ" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Resoluções CNJ</h3>
+            <div class="livro-card__links"><a href="assets/img/vademecum.img/113-03%20Resolu%C3%A7%C3%B5es%20CNJ%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Resoluções CNJ, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/vademecum.img/114-VADE%20MECUM%20capa%20frente.jpg" alt="Capa do livro VADE MECUM" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">VADE MECUM</h3>
+            <div class="livro-card__links"><a href="assets/img/vademecum.img/113-%20VADE%20MECUM%20amostra.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro VADE MECUM, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/vademecum.img/120-Vade%20Mecum%20MPDFT%20-%20CAPA%20frente.jpg" alt="Capa do livro Vade Mecum MPDFT" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Vade Mecum MPDFT</h3>
+            <div class="livro-card__links"><a href="assets/img/vademecum.img/120-Vade%20Mecum%20MPDFT%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Vade Mecum MPDFT, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/vademecum.img/138-Vade%20Mecum%20Dir%20Humanos%20-%20CAPA%20frente.jpg" alt="Capa do livro Vade Mecum Dir Humanos" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Vade Mecum Dir Humanos</h3>
+            <div class="livro-card__links"><a href="assets/img/vademecum.img/138-Vade%20Mecum%20Dir%20Humanos%20-%20AMOSTRA.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Vade Mecum Dir Humanos, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+        <article class="livro-card">
+          <div class="livro-card__capa"><img src="assets/img/vademecum.img/155-04%20Vade%20Mecum%20MILITAR%20-%20capa%20frente.jpg" alt="Capa do livro Vade Mecum MILITAR" width="160" height="240" loading="lazy"></div>
+          <div class="livro-card__corpo">
+            <h3 class="livro-card__titulo">Vade Mecum MILITAR</h3>
+            <div class="livro-card__links"><a href="assets/img/vademecum.img/155-04%20Vade%20Mecum%20MILITAR.pdf" class="btn livro-card__link-comprar" target="_blank" rel="noopener noreferrer" aria-label="Ler livro Vade Mecum MILITAR, abre em nova aba">Ler Livro</a></div>
+          </div>
+        </article>
+      </div>
+      </div>
+    </section>
+  </main>
+  <footer class="rodape">
+    <!-- 10. Rodapé -->
+    <div class="container rodape__grid">
+      <div class="rodape__coluna rodape__coluna--marca">
+        <img src="assets/logofooter.png" alt="Frôntis Editorial" class="rodape__logo" width="150" height="72" loading="lazy">
+      </div>
+
+      <nav class="rodape__coluna" aria-label="Navegação do rodapé">
+        <h3 class="rodape__titulo-coluna">Navegação</h3>
+        <ul class="rodape__lista">
+          <li><a href="index.html#servicos">Serviços</a></li>
+          <li><a href="index.html#processo">Processo</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#portfolio">Portfólio</a></li>
+          <li><a href="index.html#artigos">Artigos</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="rodape__coluna">
+        <h3 class="rodape__titulo-coluna">Contato</h3>
+        <ul class="rodape__lista">
+          <li><a href="#" data-whatsapp>WhatsApp</a></li>
+          <li><a href="mailto:escritorio@frontis.com.br">escritorio@frontis.com.br</a></li>
+          <li><a href="#" data-whatsapp>WhatsApp: (11) 94511-6620</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container rodape__barra">
+      <!-- TROCAR AQUI: incluir CNPJ quando o cliente confirmar se deseja exibir (seção 14 do PROJETO.md) -->
+      <p>&copy; <span id="ano-atual"></span> Escritório Editorial Frôntis. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
