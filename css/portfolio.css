@@ -24,3 +24,20 @@
 .section.catalogo__abertura { padding-bottom: 0; }
 .catalogo__abertura + .section { padding-top: var(--esp-5); }
 .catalogo__abertura + .section .portfolio__livros-grid { margin-top: 0; }
+.catalogo__outras-botoes { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--esp-2); }
+@media (min-width: 640px) {
+  .catalogo__abertura ~ section .portfolio__livros-grid { grid-template-columns: repeat(3, 1fr); gap: var(--esp-4) var(--esp-3); }
+}
+@media (max-width: 639px) {
+  .catalogo__outras-botoes { flex-direction: column; }
+  .catalogo__outras-botoes .btn { width: 100%; text-align: center; }
+}
+/* Colunas do catálogo: 3 no mobile, 4 no desktop */
+.catalogo__abertura ~ section .portfolio__livros-grid { grid-template-columns: repeat(3, 1fr); gap: var(--esp-3) var(--esp-2); }
+@media (min-width: 1024px) {
+  .catalogo__abertura ~ section .portfolio__livros-grid { grid-template-columns: repeat(4, 1fr); gap: var(--esp-4) var(--esp-3); }
+}
+@media (max-width: 639px) {
+  .catalogo__abertura ~ section .portfolio__livros-grid { grid-template-columns: repeat(3, 1fr); gap: var(--esp-3) var(--esp-1); }
+  .catalogo__abertura ~ section .livro-card__titulo { font-size: 0.85rem; }
+}
